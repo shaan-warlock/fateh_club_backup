@@ -314,44 +314,8 @@ class Event(http.Controller):
         """
         Override the base event register controller to customize functionality.
         """
-        # Call the overridden method
         values = self._prepare_event_register_values(event, **post)
-        # Render the custom template or the base one
         return request.render("website_event.event_description_full", values)
-    #
-    # def _prepare_event_register_values(self, event, **post):
-    #     """
-    #     Custom preparation of event register values, adding grouping and sorting logic.
-    #     """
-    #     tickets = request.env['event.event.ticket'].sudo().search([
-    #         ('event_id', '=', event.id),
-    #         ('is_expired', '=', False),
-    #     ])
-    #
-    #     sorted_tickets_group = sorted(tickets, key=lambda ticket: ticket.ticket_label or "")
-    #     tickets_grouped = defaultdict(lambda: defaultdict(list))
-    #
-    #     for ticket in sorted_tickets_group:
-    #         if ticket.ticket_label:
-    #             group_key = ticket.ticket_label
-    #         else:
-    #             group_key = "No Group"
-    #
-    #         subgroup_key = ticket.name if ticket.name else "Unnamed Ticket"  # Handle empty ticket names
-    #         tickets_grouped[group_key][subgroup_key].append(ticket)
-    #
-    #     tickets_grouped = {key: dict(value) for key, value in tickets_grouped.items()}
-    #
-    #     urls = event._get_event_resource_urls()
-    #     return {
-    #         'event': event,
-    #         'main_object': event,
-    #         'range': range,
-    #         'google_url': urls.get('google_url'),
-    #         'iCal_url': urls.get('iCal_url'),
-    #         'tickets_grouped': tickets_grouped,
-    #     }
-
 
     def _prepare_event_register_values(self, event, **post):
         """

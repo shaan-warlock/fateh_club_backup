@@ -27,7 +27,7 @@ class RegistrationPortal(portal.CustomerPortal):
     def _get_portal_default_registration_domain(self):
         my_user = request.env.user
         return [
-            ('state', '=', 'open'),
+            ('state', 'in', ['open', 'done']),
             ('partner_id', '=', my_user.partner_id.id),
         ]
 

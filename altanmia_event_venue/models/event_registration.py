@@ -125,6 +125,10 @@ class EventRegistration(models.Model):
 
     def get_event_ticket_qrcode(self):
         self.sudo()._compute_qrcode()
+        return '/web/image/event.registration/%s/qrcode' % self.id
+
+    def get_event_ticket_qrcode_for_portal(self):
+        self.sudo()._compute_qrcode()
         return '/webb/image/event.registration/%s/qrcode' % self.id
 
     def action_confirm(self):

@@ -147,7 +147,6 @@
                                             </div>
                                         </div>
                                     </t>
-
                                 </div>
                             </t>
                             <div class="bg-light ticket border-bottom">
@@ -175,7 +174,6 @@
                                     </button>
                                 </t>
                             </div>
-
                         </div>
                     </div>
                 </center>
@@ -253,7 +251,7 @@
                         <!-- Description -->
                         <div id="o_wevent_event_main_col" class="col-lg-8 bg-white px-3 pt-5 pb-0 shadow-sm">
                             <span t-field="event.description" itemprop="description"/>
-                            <t t-set="registration_qrcode" t-value="registration.get_event_ticket_qrcode()"/>
+                            <t t-set="registration_qrcode" t-value="registration.get_event_ticket_qrcode_for_portal()"/>
                             <div class="row border-1 p-3 bg-light-gray">
                                 <div class="col-12 bg-white">
                                     <div dir="rtl" class=" oe_website_contract">
