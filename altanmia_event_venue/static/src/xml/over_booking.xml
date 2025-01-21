@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="payment" xml:space="preserve">
+    <t t-name="altanmia_event_venue.ticket_overbook">
+        <div class="text-center">
+            <h4>Sorry! your booking not complete</h4>
+            <p>Please visit this <a href="/helpdesk/ticket-care-2">link</a>, and let us know about this issue.</p>
+        </div>
+    </t>
+</templates>

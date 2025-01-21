@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ticket_paperformat_a5" model="report.paperformat">
+            <field name="name">A5 Label Sheet</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">210</field>
+            <field name="page_width">100</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="dpi">96</field>
+        </record>
+
+        <record id="action_report_a5_registration_v1" model="ir.actions.report">
+            <field name="name">Registration A5 V1</field>
+            <field name="model">event.registration</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">altanmia_event_venue.report_a5_registration_v1</field>
+            <field name="report_file">altanmia_event_venue.report_a5_registration_v1</field>
+            <field name="print_report_name">'Ticket - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="event.model_event_registration"/>
+            <field name="paperformat_id" ref="altanmia_event_venue.ticket_paperformat_a5"/>
+            <field name="binding_type">report</field>
+            <field name="context">{ 'lang': 'ar_001'}</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,74 @@
+.ticket_main_container{
+	max-width: 300px;
+	margin: 0px auto;
+}
+.ticket-green{
+	border-top: 15px solid green;
+	// border-bottom: 15px solid green;
+	background: #00800033;
+	color: black;
+}
+.ticket-blue{
+	// border-top: 15px solid green;
+	border-bottom: 15px solid #002CA6;
+	background: #002ca65e;
+	color: black;
+}
+.font-smole-13{
+	font-size: 13px;
+}
+.ticket_qrcode_confirmation{
+	height: 200px;
+	width: 200px;
+}
+.header_print_buttons{
+	display: none;
+}
+@media (max-width: 500px) {
+	.ticket_qrcode_confirmation{
+		height: 150px;
+		width: 150px;
+	}
+	.medal_print_buttons{
+		display: none;		
+	}
+	.header_print_buttons{
+		display: block;
+	}
+}
+
+.custom-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border-radius: 35px;
+    padding: 10px;
+}
+
+.ticket_detail {
+    background: #f6f7f9 !important;
+    width: 40%;
+    padding: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .custom-section {
+        width: 80%; /* Adjust width for tablets or smaller screens */
+    }
+
+    .ticket_detail {
+        width: 80%; /* Adjust width for tablets or smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-section {
+        width: 90%; /* Adjust width for small mobile screens */
+    }
+
+    .ticket_detail {
+        width: 90%; /* Adjust width for small mobile screens */
+    }
+}

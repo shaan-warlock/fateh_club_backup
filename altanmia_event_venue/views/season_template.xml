@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="season_ticket" name="Season Ticket">
+        <t t-call="website.layout">
+            <div id="wrap" class="o_wevent_index">
+                <!-- Options -->
+                <t t-set="opt_events_list_cards" t-value="is_view_active('website_event.opt_events_list_cards')"/>
+                <t t-set="opt_events_list_columns" t-value="is_view_active('website_event.opt_events_list_columns')"/>
+                <!-- Drag/Drop Area -->
+                <div id="oe_structure_we_index_1" class="oe_structure oe_empty"/>
+                <!-- Content -->
+                <div t-attf-class="o_wevent_events_list #{opt_events_list_cards and 'opt_event_list_cards_bg'}">
+                    <div class="container">
+                        <div class="row">
+                            <div id="o_wevent_index_main_col" t-attf-class="col-md my-5 #{opt_events_list_columns and 'opt_events_list_columns' or 'opt_events_list_rows'}">
+                                <div class="row">
+                                    <t t-call="altanmia_event_venue.season_ticket_list"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Drag/Drop Area -->
+                <div id="oe_structure_we_index_2" class="oe_structure oe_empty"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="season_ticket_list" name="Season Ticket list">
+        <!-- Options -->
+        <t t-set="opt_index_sidebar" t-value="is_view_active('website_event.opt_index_sidebar')"/>
+        <t t-if="opt_events_list_columns" t-set="opt_event_size" t-value="opt_index_sidebar and 'col-md-6' or 'col-md-6 col-lg-4'"/>
+        <t t-else="" t-set="opt_event_size" t-value="opt_index_sidebar and 'col-12' or 'col-xl-10 offset-xl-1'"/>
+        <!-- No events -->
+        <t t-if="not season_tickets">
+            <div class="col-12">
+                <div class="h2 mb-3">No season ticket found.</div>
+                <div class="alert alert-info text-center" groups="event.group_event_user">
+                    <p class="m-0">Use the top button '<b>+ New</b>' to create a season ticket.</p>
+                </div>
+            </div>
+        </t>
+        <!-- List -->
+        <div t-foreach="season_tickets" t-as="ticket" t-attf-class=" #{opt_event_size} mb-4">
+            <a t-attf-href="/event/season/ticket/#{ slug(ticket) }" class="text-decoration-none" t-att-data-publish="ticket.is_published and 'on' or 'off'">
+                <article t-attf-class="h-100 #{opt_events_list_cards and 'card border-0 shadow-sm'}" itemscope="itemscope" itemtype="http://schema.org/Event">
+                    <div class="h-100 row no-gutters">
+                        <!-- Header -->
+                        <header t-attf-class="overflow-hidden bg-secondary #{opt_events_list_columns and 'col-12' or 'col-sm-4 col-lg-3'} #{(not opt_events_list_cards) and 'shadow'}">
+                            <!-- Image + Link -->
+                            <div class="d-block h-100 w-100">
+                                <t t-call="website.record_cover">
+                                    <t t-set="_record" t-value="ticket"/>
+                                    <!-- Short Date -->
+                                    <div t-if="ticket.event_type_ticket_id" class="o_wevent_event_date position-absolute bg-white shadow-sm text-dark">
+                                        <span t-field="ticket.event_type_ticket_id"/>
+                                    </div>
+                                    <!-- Unpublished -->
+                                    <small t-if="not ticket.is_published" class="o_wevent_unpublished bg-danger">
+                                        <i class="fa fa-ban mr-2"/>Unpublished
+                                    </small>
+                                </t>
+                            </div>
+                        </header>
+                        <div t-att-class="'%s %s' % (
+                            opt_events_list_columns and 'col-12' or 'col', 'h-100' or '')">
+                            <!-- Body -->
+                            <main t-attf-class="#{opt_events_list_cards and 'card-body' or (opt_events_list_columns and 'py-3' or 'px-4')}">
+                                <!-- Title -->
+                                <h5 t-attf-class="card-title mt-2 mb-0 text-truncate #{(not ticket.is_published) and 'text-danger'}">
+                                    <span t-field="ticket.display_name" itemprop="name"/>
+                                </h5>
+                                <!-- Start Date & Time -->
+                                <time itemprop="startDate" t-att-datetime="ticket.date_begin">
+                                    <span t-field="ticket.with_context(tz=ticket.date_tz).date_begin" t-options="{'date_only': 'true', 'format': 'long'}"/> -
+                                    <span t-field="ticket.with_context(tz=ticket.date_tz).date_end" t-options="{'date_only': 'true', 'format': 'long'}"/>
+                                </time>
+                            </main>
+                        </div>
+                    </div>
+                </article>
+            </a>
+        </div>
+        <!-- Pager -->
+        <div class="form-inline justify-content-center my-3">
+            <t t-call="website.pager"/>
+        </div>
+    </template>
+
+    <template id="season_ticket_info" name="Season Ticket Information" track="1">
+        <t t-call="altanmia_event_venue.season_ticket_details">
+            <section class="bg-200 mt-n5">
+                <div class="container overflow-hidden">
+                    <div class="row no-gutters mt-n4 mb-3">
+                        <!-- Description -->
+                        <div id="o_wevent_event_main_col" class="col-lg-8 bg-white px-3 pt-5 pb-0 shadow-sm">
+                            <span t-field="season_ticket.description" itemprop="description"/>
+                        </div>
+                        <div class="col-lg-4 bg-light shadow-sm d-print-none">
+                            <!-- Date & Time -->
+                            <div class="o_wevent_sidebar_block">
+                                <h4 class="o_wevent_sidebar_title">Date &amp; Time</h4>
+                                <div class="d-flex">
+                                    <h6 t-field="season_ticket.with_context(tz=season_ticket.date_tz).date_begin" class="my-1 mr-1 oe_hide_on_date_edit" t-options="{'date_only': 'true', 'format': 'EEEE'}"/>
+                                    <h6 class="my-1 oe_hide_on_date_edit" t-field="season_ticket.with_context(tz=season_ticket.date_tz).date_begin" t-options="{'date_only': 'true', 'format': 'long'}" itemprop="startDate" t-att-datetime="season_ticket.date_begin"/>
+                                </div>
+
+                                <i class="fa fa-long-arrow-down d-block text-muted mx-3 my-2" style="font-size: 1.5rem"/>
+                                <div class="d-flex">
+                                    <h6 t-field="season_ticket.with_context(tz=season_ticket.date_tz).date_end" class="my-1 mr-1 oe_hide_on_date_edit" t-options="{'date_only': 'true', 'format': 'EEEE'}"/>
+                                        <h6 class="my-1 oe_hide_on_date_edit" t-field="season_ticket.with_context(tz=season_ticket.date_tz).date_end" t-options="{'date_only': 'true', 'format': 'long'}"/>
+                                </div>
+                            </div>
+                            <!-- Ticket information -->
+                            <div t-if="season_ticket.event_type_ticket_id" class="o_wevent_sidebar_block">
+                                <h4 class="o_wevent_sidebar_title">Ticket Type</h4>
+                                <h6 t-field="season_ticket.event_type_ticket_id"/>
+
+                                <h6 class="o_wevent_sidebar_title">Ticket Price</h6>
+                                <h4>
+                                    <span data-oe-type="monetary" >
+                                        <t t-if="(season_ticket.price-website.get_current_pricelist().currency_id._convert(season_ticket.price_reduce, season_ticket.company_id.sudo().currency_id, season_ticket.company_id, datetime.date.today())) &gt; 1 and website.get_current_pricelist().discount_policy == 'without_discount'">
+                                            <del class="text-danger mr-1" t-field="season_ticket.price" t-options="{'widget': 'monetary', 'from_currency': season_ticket.company_id.sudo().currency_id, 'display_currency': website.get_current_pricelist().currency_id}"/>
+                                        </t>
+                                        <span t-field="season_ticket.price_reduce" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                        <span itemprop="price" class="d-none" t-esc="season_ticket.price"/>
+                                        <span itemprop="priceCurrency" class="d-none" t-esc="website.pricelist_id.currency_id.name"/>
+                                    </span>
+                                </h4>
+                            </div>
+                            <div class="o_wevent_sidebar_block">
+                                <form
+                                    id="season_ticket_form"
+                                    class="mb-5"
+                                    t-attf-action="/event/season/ticket/#{slug(season_ticket)}/buy" method="post"
+                                    itemscope="itemscope" itemprop="offers" itemtype="http://schema.org/AggregateOffer">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input type="number" class="form-control" name="number_of_ticket" value="1"/>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <button type="submit" class="btn btn-primary o_wait_lazy_js btn-block a-submit" disabled="" id="buy_ticket_btn">
+                                                Buy Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </t>
+    </template>
+
+    <template id="season_ticket_details" name="Season Ticket Header">
+        <t t-call="altanmia_event_venue.layout">
+            <div name="season_ticket" itemscope="itemscope" itemtype="http://schema.org/Event">
+                <t t-call="website.record_cover">
+                    <t t-set="_record" t-value="season_ticket"/>
+                    <t t-set="use_filters" t-value="True"/>
+                    <t t-set="use_size" t-value="True"/>
+                    <t t-set="use_text_align" t-value="True"/>
+
+                    <div class="container d-flex flex-column flex-grow-1 justify-content-around">
+                        <div class="o_wevent_event_title">
+                            <h1 t-field="season_ticket.display_name" class="o_wevent_event_name" itemprop="name" placeholder="Season Ticket Name"/>
+                        </div>
+                    </div>
+                </t>
+                <t t-out="0"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="layout" name="Event">
+    <t t-call="website.layout">
+        <!-- Options -->
+        <t t-set="opt_events_list_categories" t-value="is_view_active('website_event.opt_events_list_categories')"/>
+        <div id="wrap" t-attf-class="o_wevent_event js_event #{'o_wevent_hide_sponsors' if hide_sponsors else ''}">
+            <t t-out="0"/>
+            <t t-set="editor_sub_message">Following content will appear on all events.</t>
+            <div class="oe_structure oe_empty" id="oe_structure_website_event_layout_1" t-att-data-editor-sub-message="editor_sub_message"/>
+        </div>
+    </t>
+</template>
+
+    <template id="season_ticket_buyer_details" name="Season  Ticket Buyer information">
+        <div id="modal_season_ticket_buyer" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <form id="season_ticket_buyer" t-attf-action="/event/season/ticket/#{slug(season_ticket)}/buy/confirm" method="post" class="js_website_submit_form">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="modal-content">
+                        <div class="modal-header align-items-center">
+                            <h4 class="modal-title">Tickets Buyer Information</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>×</span></button>
+                        </div>
+                        <t t-foreach="range(0, tickets)" t-as="ticket">
+                                <div class="modal-body bg-light border-bottom">
+                                    <h5 class="mt-1 pb-2 border-bottom">
+                                        <span t-esc="ticket +1 "/>. <span t-if="season_ticket.event_type_ticket_id" t-esc="season_ticket.event_type_ticket_id.name"/>
+                                        Ticket
+                                        <small class="text-muted"> for <span t-esc="season_ticket.display_name"/> </small>
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-lg my-2">
+                                            <label>Name</label>
+                                            <input class="form-control" type="text" t-attf-name="#{ticket}-name" required="This field is required"
+                                                t-att-value="default_first_attendee.get('name', '') if ticket == 0 else ''"/>
+                                        </div>
+                                        <div class="col-lg my-2">
+                                            <label>Email</label>
+                                            <input class="form-control" type="email" t-attf-name="#{ticket}-email" required="This field is required"
+                                                t-att-value="default_first_attendee.get('email', '') if ticket == 0 else ''"/>
+                                        </div>
+                                        <div class="col-lg my-2">
+                                            <label>Phone <small>(Optional)</small></label>
+                                            <input class="form-control" type="tel" t-attf-name="#{ticket}-phone"
+                                                t-att-value="default_first_attendee.get('phone', '') if ticket == 0 else ''"/>
+                                        </div>
+                                        <input class="d-none" type="text" t-attf-name="#{ticket}-partner_id" t-att-value="default_first_attendee.get('partner_id', '') if ticket == 0 else ''"/>
+                                    </div>
+                                </div>
+                            </t>
+                        <div class="modal-footer border-0 justify-content-between">
+                            <button type="button" class="btn btn-secondary js_goto_event" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary" >Continue</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </template>
+
+</odoo>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_a5_registration_v1">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="registration">
+                <div dir="rtl" class="page " style="font-size:11px">
+                    <div t-if="registration.event_ticket_id.background" class="watermark"
+                         style="z-index:-1;width:100%; opacity:1;">
+                        <img t-attf-src="/web/image/event.event.ticket/#{registration.event_ticket_id.id}/background"/>
+                    </div>
+                    <div class="row mt-10">
+                        <div class="col-2 mt-5">
+                            <div class="mx-auto mt-10">
+                                <img class=" oe_avatar mt-5" width="80" height="80"
+                                     t-attf-src="/web/image/event.type/#{registration.event_id.event_type_id.id}/logo"
+                                     alt="Operator Avatar"/>
+                            </div>
+                            <div class="mt-2">
+                                <img class="oe_avatar" width="80" height="80"
+                                     t-att-src="registration.get_event_ticket_qrcode()"
+                                     alt="Operator Avatar"/>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-6 border-1 ">
+                                    <div>
+                                        <span class="mx-2">الفئة</span>
+                                        <span t-field="registration.event_ticket_id.name"/>
+                                    </div>
+                                    <div class="row p-2">
+                                        <div class="col-4 ">المدخل</div>
+                                        <div class="col-4 text-center"
+                                             t-field="registration.section_id.closet_gate.code"/>
+                                        <div class="col-4 text-right">Gate</div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="col-6">
+                                    <div t-if="registration.event_id.event_type_id">
+                                        <div t-field="registration.event_id.event_type_id.name"/>
+                                        <div t-field="registration.event_id.with_context(lang='en').event_type_id.name"/>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div t-field="registration.event_id.venue_id.name"/>
+                                    <div t-field="registration.event_id.with_context(lang='en').venue_id.name"/>
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="col-6 border-1">
+                                    <div class="row text-center">
+                                        <div t-if="registration.event_id.first_team" class="col-5 mt-5">
+                                            <img width="75" height="75"
+                                                 t-attf-src="/web/image/event.sport.team/#{registration.event_id.first_team.id}/logo"/>
+                                        </div>
+                                        <div class="col-2 text-center mt-5">
+                                            <span class="mt-10">VS</span>
+                                        </div>
+                                        <div t-if="registration.event_id.second_team" class="col-5 mt-5">
+                                            <img class="oe_avatar" width="75" height="75"
+                                                 t-attf-src="/web/image/event.sport.team/#{registration.event_id.second_team.id}/logo"
+                                                 alt="Operator Avatar"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6  ">
+                                    <div t-if="registration.event_id.first_team" class="row text-center">
+                                        <div class="col-6 py-2 border-1">
+                                            <div t-field="registration.event_id.first_team"/>
+                                            <div>&amp;</div>
+                                            <div t-field="registration.event_id.second_team"/>
+                                        </div>
+                                        <div class="col-6 py-2 border-1">
+                                            <div t-field="registration.event_id.with_context(lang='en').first_team"/>
+                                            <div>&amp;</div>
+                                            <div t-field="registration.event_id.with_context(lang='en').second_team"/>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center">
+                                        <div class="col-6 py-2 border-1">
+                                            <div t-field="registration.event_id.date_begin_hijri_day"/>
+                                            <div t-field="registration.event_id.date_begin_hijri"/>
+                                            <div t-field="registration.event_id.date_begin"
+                                                 t-options="{'time_only': 'true', 'format': 'short'}"/>
+                                        </div>
+                                        <div dir="ltr" class="col-6 py-2 border-1">
+                                            <div t-field="registration.event_id.date_begin_day"/>
+                                            <div t-field="registration.event_id.with_context(lang='en').date_begin"
+                                                 t-options="{'widget': 'datetime', 'tz_name':  registration.event_id.date_tz, 'format': 'd MMM YYYY'}"/>
+                                            <div t-field="registration.event_id.with_context(lang='en').date_begin"
+                                                 t-options="{'time_only': 'true', 'format': 'short'}"/>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-1">
+                                <div class="col-12 border-1 p-1">
+                                    <center>
+                                        <div t-foreach="registration.event_id.event_type_id.sponsor_ids" t-as="sponsor"
+                                             class="d-inline">
+                                            <img class="oe_avatar" width="50" height="25"
+                                                 t-attf-src="/web/image/event.sponsor/#{sponsor.id}/logo"
+                                                 alt="Operator Avatar"/>
+                                        </div>
+                                    </center>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="page-break-after: always;"/>
+            </t>
+        </t>
+    </template>
+</odoo>

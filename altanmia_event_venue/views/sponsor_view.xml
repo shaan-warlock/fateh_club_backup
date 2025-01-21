@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sponsor_tree" model="ir.ui.view">
+        <field name="name">sponsor.tree</field>
+        <field name="model">event.sponsor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"  optional="show"/>
+                <field name="logo" widget="image" options="{'size': [150, 150]}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sponsor_kanban">
+            <field name="name">sponsor.kanban</field>
+            <field name="model">event.sponsor</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban" sample="1">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="logo"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+
+                                <div class="o_kanban_image_fill_left o_kanban_image_full" t-attf-style="background-image: url(#{kanban_image('event.sponsor', 'logo', record.id.raw_value)})" role="img"/>
+
+                                <div class="oe_kanban_details d-flex flex-column">
+                                    <strong class="o_kanban_record_title oe_partner_heading"><field name="display_name"/></strong>
+                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                    <div class="o_row">
+                                        <span class="oe_kanban_partner_links"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    <record id="sponsor_panel" model="ir.ui.view">
+        <field name="name">sponsor.panel</field>
+        <field name="model">event.sponsor</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sponsor_form">
+            <field name="name">sponsor.form</field>
+            <field name="model">event.sponsor</field>
+            <field name="arch" type="xml">
+                <form string="Sponsor Form">
+                    <sheet string="Sponsor">
+                        <div class="oe_button_box" name="button_box"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                        <field name="logo" invisible="1"/>
+                        <field name="logo" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;logo&quot;}"/>
+                        <div class="oe_title mb24">
+                            <field name="active" invisible="1"/>
+                            <h1>
+                                <field class="o_text_overflow" name="name" default_focus="1" placeholder="e.g. Mega Co." />
+                            </h1>
+                        </div>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="action_sponsor_show">
+        <field name="name">Sponsors</field>
+        <field name="res_model">event.sponsor</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">There is No sponsor Yet!</p>
+        </field>
+    </record>
+
+    <menuitem id="sponsor_menu"
+              name="Sponsors"
+              action="action_sponsor_show"
+              parent="event.menu_event_configuration"
+              sequence="2"/>
+
+</odoo>

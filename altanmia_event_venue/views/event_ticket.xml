@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="event_ticket_label_form" model="ir.ui.view">
+            <field name="name">event.ticket.venue.section.form</field>
+            <field name="model">event.event.ticket</field>
+            <field name="inherit_id" ref="event.event_event_ticket_view_tree_from_event"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="ticket_label" string="Ticket Label" optional="show"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

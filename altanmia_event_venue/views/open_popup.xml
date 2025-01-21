@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="action_open_popup" model="ir.actions.act_window">
+            <field name="name">Open Popup</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="altanmia_event_venue.popup_template2"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

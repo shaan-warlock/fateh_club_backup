@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="header_cart_link_timer"
+              name="Header Cart Link with timer"
+              inherit_id="website_sale.header_cart_link">
+        <xpath expr="//sup[hasclass('my_cart_quantity')]" position="after">
+            <sup  t-if="website_sale_order and website_sale_order.cart_timer_formatted"
+                    t-attf-class="my_cart_timer badge badge-warning #{'start' if website_sale_order and website_sale_order.cart_quantity else 'stop'}"
+                 t-esc="website_sale_order.cart_timer_formatted"/>
+        </xpath>
+    </template>
+
+    <template id="cart_summary_timeout"
+              name="Header Cart Link with timer"
+              inherit_id="website_sale.cart_summary">
+        <xpath expr="//div[hasclass('alert-info')]" position="replace">
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line and cart_timeout"
+                 class="alert alert-info">
+                    Timeout: Your selling session has expired, and your cart has been cleared, since the allotted time for completing the sale has been exceeded.
+                </div>
+
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line and not cart_timeout"
+                 class="alert alert-info">
+                    Your cart is empty!
+            </div>
+        </xpath>
+    </template>
+
+    <template id="cart_popover_timeout"
+              name="Header Cart Link with timer"
+              inherit_id="website_sale.cart_popover">
+        <xpath expr="//div[hasclass('alert-info')]" position="replace">
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line and cart_timeout"
+                 class="alert alert-info">
+                    Timeout: Your selling session has expired, and your cart has been cleared, since the allotted time for completing the sale has been exceeded.
+                </div>
+
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line and not cart_timeout"
+                 class="alert alert-info">
+                    Your cart is empty!
+            </div>
+        </xpath>
+    </template>
+
+    <template id="cart_lines_timeout"
+              name="Header Cart Link with timer"
+              inherit_id="website_sale.cart_lines">
+        <xpath expr="//div[hasclass('alert-info')]" position="replace">
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line and cart_timeout"
+                 class="alert alert-info">
+                Timeout: Your selling session has expired, and your cart has been cleared, since the allotted time for
+                completing the sale has been exceeded.
+            </div>
+
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line and not cart_timeout"
+                 class="alert alert-info">
+                Your cart is empty!
+            </div>
+        </xpath>
+    </template>
+
+    <template id="confirmation_print_ticket"
+              name="Confirmation order with ticket print"
+              inherit_id="website_sale.confirmation">
+        <xpath expr="//div[hasclass('thanks_msg')]" position="replace">
+            <div class="thanks_msg">
+                <h2>Thank you for your order.
+                </h2>
+                <hr/>
+                <div>
+                    <a role="button" class="btn btn-primary d-none d-md-inline-block"
+                       href="/shop/print" target="_blank"
+                       aria-label="Print" title="Print">
+                        <i class="fa fa-print"></i>
+                        Print Sale order
+                    </a>
+                    <a t-if="order.has_event_ticket"
+                       role="button"
+                       t-attf-href="/my/order/ticket/printa/#{order.access_token}"
+                       class="btn btn-primary d-none d-md-inline-block"
+                       target="_blank"
+                       aria-label="Print"
+                       title="Print">
+                        <i class="fa fa-print"/>
+                        Print Tickets
+                    </a>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="altanmia_event_venue_address" inherit_id="website_sale.address">
+        <xpath expr="//input[@name='field_required']" position="attributes">
+            <attribute name="t-att-value">'phone,name,email'</attribute>
+        </xpath>
+    </template>
+</odoo>

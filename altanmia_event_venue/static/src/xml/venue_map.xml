@@ -1,0 +1,7 @@
+<templates>
+    <t t-name="RenderVenueMap">
+        <div class="map-container">
+            <img t-att-src="imageUrl"/>
+        </div>
+    </t>
+</templates>

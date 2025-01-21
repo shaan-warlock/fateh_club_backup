@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_event_description_full" inherit_id="website_event.registration_template"
+              name="Custom Event Description" priority="10">
+        <xpath expr="//div[@id='o_wevent_tickets_collapse']" position="replace">
+            <div id="o_wevent_tickets_collapse" class="collapse show" style="overflow: hidden;">
+                <center>
+                    <div class="custom-section px-3 py-3 bg-light border-bottom">
+                        <div t-att-data-venue="event.venue_id.id" class="col-md-8 col-xs-12 p-1" id="stadium-map"/>
+                        <div t-att-data-event="event.id" class="col-md-8 col-xs-12 p-1 d-none" id="event_id"/>
+                        <div t-att-data-maxlimitevent="event.max_reserve_ticket" class=" d-none" id="event_max_limit"/>
+                    </div>
+                    <br/>
+                    <div class="ticket_detail">
+                        <t t-set="tickets" t-value="sorted(tickets, key=lambda k: k.price, reverse=True)"/>
+                        <div id="ticket-list">
+
+                            <div class="row mb-2" style="text-align: justify;">
+                                <t t-foreach="no_group_tickets" t-as="ticket" t-key="ticket">
+                                    <div class="col-4 mb-3">
+                                        <h5 itemprop="name" t-esc="ticket.name" class="my-0"/>
+                                    </div>
+                                    <div class="col-4">
+                                        <span><t t-esc="ticket.price"/>&amp;nbsp;SR
+                                        </span>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="w-auto d-flex"
+                                             style="justify-content: center;align-items: center;gap: 7px;">
+                                            <i class="fa fa-minus"/>
+                                            <select
+                                                    t-attf-name="nb_register-#{ticket.id}"
+                                                    class="custom-select  d-none">
+                                                <t t-set="seats_max_ticket"
+                                                   t-value="(not ticket.seats_limited or ticket.seats_available &gt; 100000) and 100000 or ticket.seats_available + 1"/>
+                                                <t t-set="seats_max_event"
+                                                   t-value="(not event.seats_limited or event.seats_available &gt; 100000) and 100000 or event.seats_available + 1"/>
+                                                <t t-set="seats_max"
+                                                   t-value="min(seats_max_ticket, seats_max_event)"/>
+                                                <t t-foreach="range(0, seats_max)" t-as="nb">
+                                                    <option t-esc="nb"
+                                                            t-att-selected="len(ticket) == 0 and nb == 0 and 'selected'"/>
+                                                </t>
+                                            </select>
+                                            <t t-if="not ticket.is_expired and ticket.sale_available">
+                                                <input type="number"
+                                                       t-attf-name="nb_register-#{ticket.id}"
+                                                       value="0"
+                                                       t-att-data-max="ticket.max_reserve_ticket"
+                                                       t-att-data-available="ticket.seats_available"
+                                                       t-att-data-id="ticket.id"
+                                                       class="ticket-num"
+                                                       style="background: #fff;width: 60px;border-radius: 5px;border: none;text-align: center;padding-left: 15px;"/>
+                                            </t>
+                                            <div t-else="" class="text-danger">
+                                                <span t-if="not ticket.sale_available and not ticket.is_expired and ticket.is_launched()">
+                                                    Sold Out
+                                                </span>
+                                                <span t-if="ticket.is_expired">Expired</span>
+                                            </div>
+                                            <i class="fa fa-plus"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <span class="alert-danger error d-none mt-1"
+                                              t-att-id="'error-' + str(ticket.id)" role="alert"/>
+                                    </div>
+
+                                    <div class="o_wevent_registration_multi_select d-none"/>
+                                </t>
+                            </div>
+
+                            <t t-foreach="tickets_grouped" t-as="group" t-key="group">
+                                <div class="row" style="display: flex;">
+                                    <div class="col-6" style="text-align:left;">
+                                        <h5 itemprop="name" t-esc="group" class="mb-3"/>
+                                    </div>
+                                    <div class="col-6" style="text-align:end;">
+                                        <a href="#" class="mb-3 fa fa-angle-down toggle-group-collapse"
+                                           t-att-data-group="group">&amp;nbsp;Show
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Dynamically assign the ID to each group -->
+                                <div class="ticket-group" t-att-id="'group-' + group.replace(' ', '_')"
+                                     style="display: none;">
+                                    <t t-foreach="tickets_grouped[group]" t-as="subgroup" t-key="subgroup">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6 t-esc="subgroup" class="text-muted mb-2 d-none"/>
+                                            </div>
+                                            <t t-foreach="tickets_grouped[group][subgroup]" t-as="ticket">
+                                                <div class="col-4 mb-3">
+                                                    <h5 itemprop="name" t-esc="ticket.name" class="my-0"/>
+                                                </div>
+                                                <div class="col-4">
+                                                    <span><t t-esc="ticket.price"/>&amp;nbsp;SR
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="w-auto d-flex"
+                                                         style="justify-content: center;align-items: center;gap: 7px;">
+                                                        <i class="fa fa-minus"/>
+                                                        <select
+                                                                t-attf-name="nb_register-#{ticket.id}"
+                                                                class="custom-select  d-none">
+                                                            <t t-set="seats_max_ticket"
+                                                               t-value="(not ticket.seats_limited or ticket.seats_available &gt; 100000) and 100000 or ticket.seats_available + 1"/>
+                                                            <t t-set="seats_max_event"
+                                                               t-value="(not event.seats_limited or event.seats_available &gt; 100000) and 100000 or event.seats_available + 1"/>
+                                                            <t t-set="seats_max"
+                                                               t-value="min(seats_max_ticket, seats_max_event)"/>
+                                                            <t t-foreach="range(0, seats_max)" t-as="nb">
+                                                                <option t-esc="nb"
+                                                                        t-att-selected="len(ticket) == 0 and nb == 0 and 'selected'"/>
+                                                            </t>
+                                                        </select>
+                                                        <t t-if="not ticket.is_expired and ticket.sale_available">
+                                                            <input type="number"
+                                                                   t-attf-name="nb_register-#{ticket.id}"
+                                                                   value="0"
+                                                                   t-att-data-max="ticket.max_reserve_ticket"
+                                                                   t-att-data-available="ticket.seats_available"
+                                                                   t-att-data-id="ticket.id"
+                                                                   class="ticket-num"
+                                                                   style="background: #fff;width: 60px;border-radius: 5px;border: none;text-align: center;padding-left: 15px;"/>
+                                                        </t>
+                                                        <div t-else="" class="text-danger">
+                                                            <span t-if="not ticket.sale_available and not ticket.is_expired and ticket.is_launched()">
+                                                                Sold Out
+                                                            </span>
+                                                            <span t-if="ticket.is_expired">Expired</span>
+                                                        </div>
+                                                        <i class="fa fa-plus"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <span class="alert-danger error d-none mt-1"
+                                                          t-att-id="'error-' + str(ticket.id)" role="alert"/>
+                                                </div>
+
+                                                <div class="o_wevent_registration_multi_select d-none"/>
+                                            </t>
+
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </t>
+
+                                </div>
+                            </t>
+                            <div class="bg-light ticket border-bottom">
+                                <div class="d-grid mt-1">
+                                    <span class="alert-danger p-2 error-total d-none"/>
+                                </div>
+                            </div>
+                            <div>
+                                <t t-if="request.env.user._is_public()">
+                                    <a t-attf-href="/web/phone/login?redirect=/event/#{ slug(event) }/register"
+                                       class="btn btn-primary">Sign Up First
+                                    </a>
+                                </t>
+                                <t t-else="">
+                                    <button type="submit"
+                                            style="width:95%;background: #002BD1;border-radius:10px;padding:10px;"
+                                            class="btn btn-primary register-btn o_wait_lazy_js btn-block a-submit"
+                                            t-attf-id="#{event.id}">
+                                        Buy Now
+                                        <t t-if="event.seats_limited and event.seats_max and event.seats_available &lt;= (event.seats_max * 0.2)">
+                                            (only
+                                            <t t-esc="event.seats_available"/>
+                                            available)
+                                        </t>
+                                    </button>
+                                </t>
+                            </div>
+
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="event_details" name="Event Header">
+        <t t-call="website_event.layout">
+            <div name="event" itemscope="itemscope" itemtype="http://schema.org/Event">
+                <t t-call="website.record_cover">
+                    <t t-set="_record" t-value="event"/>
+                    <t t-set="use_filters" t-value="True"/>
+                    <t t-set="use_size" t-value="True"/>
+                    <t t-set="use_text_align" t-value="True"/>
+
+                    <div class="container d-flex flex-column flex-grow-1 justify-content-around">
+                        <div class="o_wevent_event_title">
+                            <span t-if="event.is_participating" class="badge badge-success o_wevent_badge"><i
+                                    class="fa fa-check mr-2"/>Registered
+                            </span>
+                            <h1 t-field="event.name" class="o_wevent_event_name" itemprop="name"
+                                placeholder="Event Title"/>
+                            <h2 t-field="event.subtitle" class="o_wevent_event_subtitle" placeholder="Event Subtitle"/>
+                        </div>
+                    </div>
+                </t>
+                <t t-out="0"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="event_layout_mobile" inherit_id="website_event.layout" name="Event Mobile">
+        <xpath expr="//t[@t-if='not event.menu_id']/nav" position="attributes">
+            <attribute name="t-if">not is_mobile</attribute>
+        </xpath>
+        <xpath expr="//t[@t-else='']/nav" position="attributes">
+            <attribute name="t-if">not is_mobile</attribute>
+        </xpath>
+    </template>
+
+    <template id="registration">
+        <t t-if="is_mobile">
+            <t t-set="no_header" t-value="True"/>
+            <t t-set="no_footer" t-value="True"/>
+        </t>
+        <t t-call="altanmia_event_venue.event_details">
+            <!-- <t t-set="no_header" t-value="True"/> -->
+            <section class="bg-200 mt-n5 js_refresh_qr_page">
+                <div class="row ">
+                    <div class="col-md-8 col-sm-6"></div>
+                    <div class="col-md-4 col-sm-6 row">
+                        <div class="prev col-auto text-right" style="margin-bottom:7px;">
+                            <a role="button" t-att-class="'btn btn-link %s' % ('disabled' if not prev_record else '')"
+                               t-att-href="prev_url or '#'"
+                               style="background: #003ADD; color: white; margin-top: 3px;}">
+                                <i class="fa fa-chevron-left" role="img" aria-label="Previous" title="Previous"></i>
+                            </a>
+                        </div>
+                        <div class="navigation_button col-auto" style="margin-top:8px;">
+                            <t t-esc="current_reg"/>/
+                            <t t-esc="len(all_registration)"/>
+                        </div>
+                        <div class="next col-auto text-left" style="margin-bottom:7px;">
+                            <a role="button" t-att-class="'btn btn-link %s' % ('disabled' if not next_record else '')"
+                               t-att-href="next_url or '#'"
+                               style="background: #003ADD; color: white; margin-top: 3px;}">
+                                <i class="fa fa-chevron-right" role="img" aria-label="Next" title="Next"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container overflow-hidden">
+                    <div class="row no-gutters mt-n4 mb-3">
+                        <!-- Description -->
+                        <div id="o_wevent_event_main_col" class="col-lg-8 bg-white px-3 pt-5 pb-0 shadow-sm">
+                            <span t-field="event.description" itemprop="description"/>
+                            <t t-set="registration_qrcode" t-value="registration.get_event_ticket_qrcode()"/>
+                            <div class="row border-1 p-3 bg-light-gray">
+                                <div class="col-12 bg-white">
+                                    <div dir="rtl" class=" oe_website_contract">
+                                        <div class="container">
+                                            <div class="row" style="text-align:center;">
+                                                <div class="col-lg-4 pt16 pb16">
+                                                </div>
+                                                <div class="col-lg-4 pt16 pb16">
+                                                    <div class="d-block">
+                                                        <h4>تذكرة إلكترونية</h4>
+                                                    </div>
+                                                    <div class="d-block">
+                                                        <h4>E-Ticket</h4>
+                                                        <h4>
+                                                            <div t-field="registration.ref"/>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 pt16 pb16">
+                                                </div>
+                                            </div>
+                                            <div class="row" style="text-align:center;">
+                                                <div class="col-12">
+                                                    <img class="oe_avatar" style="width:60%;"
+                                                         t-att-src="registration_qrcode"
+                                                         alt="Operator Avatar"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-6 d-grid border-1">
+                                                <div class="row pt16 pb16">
+                                                    <div class="col text-right">المدخل</div>
+                                                    <div class="col text-center"
+                                                         t-field="registration.section_id.closet_gate.code"/>
+                                                    <div class="col">Gate</div>
+                                                </div>
+                                                <div class="row pt16 pb16">
+                                                    <div class="col text-right">الموقف</div>
+                                                    <div class="col text-center"/> <!-- Replace this span with your parking data -->
+                                                    <div class="col" style="max-width:38%;">Parking</div>
+                                                </div>
+                                                <div class="row pt16 pb16">
+                                                    <div class="col text-right">بوابة إلكترونية</div>
+                                                    <div class="col text-center"/> <!-- Replace this span with your E-Gate data -->
+                                                    <div class="col">E-Gate</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 d-grid border-1">
+                                                <div class="row pt16 pb16">
+                                                    <div class="col text-right">القطاع</div>
+                                                    <div class="col text-center"
+                                                         t-field="registration.section_id.code"></div>
+                                                    <div class="col" style="max-width:41%;">Section</div>
+                                                </div>
+                                                <div class="row pt16 pb16">
+                                                    <div class="col text-right">الصف</div>
+                                                    <div class="col text-center"/> <!-- Replace this span with your Row data -->
+                                                    <div class="col ">Row</div>
+                                                </div>
+                                                <div class="row pt16 pb16">
+                                                    <div class="col text-right">المقعد</div>
+                                                    <div class="col text-center"/> <!-- Replace this span with your Row data -->
+                                                    <div class="col">seat</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-2 row">
+                                            <div class="col-sm-6 d-grid border-1">
+                                                <div t-if="registration.event_id.event_type_id" class="row text-center">
+                                                    <div class="col-12">
+                                                        <span t-field="registration.event_id.event_type_id.name"/>
+                                                    </div>
+                                                </div>
+                                                <div t-if="registration.event_id.event_type_id" class="row text-center">
+                                                    <div class="col-12">
+                                                        <span t-field="registration.event_id.with_context(lang='en').event_type_id.name"/>
+                                                    </div>
+                                                </div>
+                                                <div class="row text-center mt-3">
+                                                    <div t-if="registration.event_id.first_team" class="col-5">
+                                                        <img class="oe_avatar" width="120" height="120"
+                                                             t-attf-src="/web/image/event.sport.team/#{registration.event_id.first_team.id}/logo"
+                                                             alt="Operator Avatar"/>
+                                                    </div>
+                                                    <div class="col-2 text-center mt-10 d-width">
+                                                        <h3>VS</h3>
+                                                    </div>
+                                                    <div t-if="registration.event_id.second_team" class="col-5">
+                                                        <img class="oe_avatar" width="120" height="120"
+                                                             t-attf-src="/web/image/event.sport.team/#{registration.event_id.second_team.id}/logo"
+                                                             alt="Operator Avatar"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 d-grid border-1">
+                                                <div class="row text-center">
+                                                    <div class="col-12" t-field="registration.event_id.venue_id.name"/>
+                                                </div>
+                                                <div class="row text-center">
+                                                    <div class="col-12"
+                                                         t-field="registration.event_id.with_context(lang='en').venue_id.name"/>
+                                                </div>
+                                                <div class="m-2">
+                                                    <div t-if="registration.event_id.first_team"
+                                                         class="row text-center border-1">
+                                                        <div class="col-6 py-2 border-1">
+                                                            <div t-field="registration.event_id.first_team"/>
+                                                            <div>&amp;</div>
+                                                            <div t-field="registration.event_id.second_team"/>
+                                                        </div>
+                                                        <div class="col-6 py-2 border-1">
+                                                            <div t-field="registration.event_id.with_context(lang='en').first_team"/>
+                                                            <div>&amp;</div>
+                                                            <div t-field="registration.event_id.with_context(lang='en').second_team"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-center border-1">
+
+                                                        <div class="col-6 py-2 border-1">
+                                                            <div t-field="registration.event_id.date_begin_hijri_day"/>
+                                                            <div t-field="registration.event_id.date_begin_hijri"/>
+                                                            <div t-field="registration.event_id.date_begin"
+                                                                 t-options="{'time_only': 'true', 'format': 'short'}"/>
+                                                        </div>
+                                                        <div dir="ltr" class="col-6 py-2 border-1">
+                                                            <div t-field="registration.event_id.date_begin_day"/>
+                                                            <div t-field="registration.event_id.with_context(lang='en').date_begin"
+                                                                 t-options="{'widget': 'datetime', 'tz_name':  registration.event_id.date_tz, 'format': 'd MMM YYYY'}"/>
+                                                            <div t-field="registration.event_id.with_context(lang='en').date_begin"
+                                                                 t-options="{'time_only': 'true', 'format': 'short'}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-2 row">
+                                            <div class="col-sm-6 d-grid border-1">
+                                                <div class="row m-2">
+                                                    <div class="col-12 text-center">
+                                                        <!--t-attf-style="background-image: url(/web/image/event.venue/1/sections_background);background-size: cover; background-repeat: no-repeat;"-->
+                                                        <img t-attf-src="/web/image/event.registration/#{registration.id}/section_map"
+                                                             alt="Operator Avatar"/>
+                                                    </div>
+                                                </div>
+                                                <div class="row m-2">
+                                                    <div class="col-12 px-5 text-right">
+                                                        <div>
+                                                            <span class="mx-2">الفئة</span>
+                                                            <span t-field="registration.event_ticket_id.name"/>
+                                                            \
+                                                            <span t-field="registration.with_context(lang='en').event_ticket_id.name"/>
+                                                        </div>
+                                                        <hr/>
+                                                        <div>
+                                                            <span class="mx-2">السعر</span>
+                                                            <div class="d-inline">
+                                                                <t t-if="(registration.event_ticket_id.price-website.get_current_pricelist().currency_id._convert(registration.event_ticket_id.price_reduce, registration.event_id.company_id.sudo().currency_id,  registration.event_id.company_id, datetime.date.today())) &gt; 1 and website.get_current_pricelist().discount_policy == 'without_discount'">
+                                                                    <del class="text-danger mr-1"
+                                                                         t-field="registration.event_ticket_id.price"
+                                                                         t-options="{'widget': 'monetary', 'from_currency':  registration.event_id.company_id.sudo().currency_id, 'display_currency': website.get_current_pricelist().currency_id}"/>
+                                                                </t>
+                                                                <span t-field="registration.event_ticket_id.price_reduce"
+                                                                      t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"
+                                                                      groups="account.group_show_line_subtotals_tax_excluded"/>
+                                                                <span t-field="registration.event_ticket_id.price_reduce_taxinc"
+                                                                      t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"
+                                                                      groups="account.group_show_line_subtotals_tax_included"/>
+                                                                <span itemprop="price" class="d-none"
+                                                                      t-esc="registration.event_ticket_id.price"/>
+                                                                <span itemprop="priceCurrency" class="d-none"
+                                                                      t-esc="website.pricelist_id.currency_id.name"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6 d-grid border-1">
+                                                <div class="row">
+                                                    <div class="col-sm-4 mt-10" id="c1">
+                                                        <img class="oe_avatar mt-3" width="120" height="120"
+                                                             t-attf-src="/web/image/event.type/#{registration.event_id.event_type_id.id}/logo"
+                                                             alt="Operator Avatar"/>
+                                                    </div>
+                                                    <div class="col-sm-8 fs-15" id="c2">
+                                                        <div t-field="registration.event_id.note"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-2 row">
+                                            <div class="col-12 border-1 p-2 text-right" id="c3">
+                                                <div t-foreach="registration.event_id.event_type_id.sponsor_ids"
+                                                     t-as="sponsor" class="d-inline">
+                                                    <img class="oe_avatar" width="100" height="100"
+                                                         t-attf-src="/web/image/event.sponsor/#{sponsor.id}/logo"
+                                                         alt="Operator Avatar"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-2">
+                                            <div class="col-12 d-md-inline-block" id="c3">
+                                                <div class="col-12">
+                                                    <!-- <img class="oe_avatar" width="150" height="150"
+                                                        t-att-src="registration_qrcode"
+                                                        alt="Operator Avatar"/> -->
+                                                    <!-- <div class="col-12 print">
+                                                        <a role="button"
+                                                        t-attf-href="/my/ticket/print/#{registration.access_token}"
+                                                        class="btn btn-primary d-none d-md-inline-block m-2"
+                                                        target="_blank"
+                                                        aria-label="Print"
+                                                        title="Print">
+                                                            <i class="fa fa-print"></i>
+                                                            Print A4
+                                                        </a>
+
+                                                        <a role="button"
+                                                        t-attf-href="/my/ticket/print/a5/#{registration.access_token}"
+                                                        class="btn btn-primary d-none d-md-inline-block m-2"
+                                                        target="_blank"
+                                                        aria-label="Print"
+                                                        title="Print">
+                                                            <i class="fa fa-print"></i>
+                                                            Print A5
+                                                        </a> -->
+                                                    <!--  <a role="button"
+                                                        href="#"
+                                                        class="btn btn-primary d-md-inline-block m-2"
+                                                        data-toggle="modal"
+                                                        data-target="#transferModal"
+                                                        aria-label="Print"
+                                                        title="Print">
+                                                         <i class="fa fa-print"></i>
+                                                         Transfer
+                                                     </a> -->
+                                                    <div class="modal fade" id="transferModal" tabindex="-1"
+                                                         role="dialog" aria-labelledby="transferModalLabel"
+                                                         aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="transferModalLabel">
+                                                                        Transfer Details
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <input type="text" placeholder="Email" id="email"
+                                                                           name="email" class="form-control"
+                                                                           required="required"/>
+                                                                    <small id="emailError"
+                                                                           class="emailerror form-text text-danger d-none">
+                                                                        Please enter a valid email address.
+                                                                    </small>
+                                                                    <input type="number" t-att-value="registration.id"
+                                                                           class="d-none"/>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-primary"
+                                                                            id="confirmTransfer">Confirm
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 bg-light shadow-sm d-print-none">
+                            <!-- Date & Time -->
+                            <div class="o_wevent_sidebar_block">
+                                <h6 class="o_wevent_sidebar_title">Date &amp; Time</h6>
+                                <div class="d-flex">
+                                    <h5 t-field="event.with_context(tz=event.date_tz).date_begin"
+                                        class="my-1 mr-1 oe_hide_on_date_edit"
+                                        t-options="{'date_only': 'true', 'format': 'EEEE'}"/>
+                                    <h5 class="my-1 oe_hide_on_date_edit"
+                                        t-field="event.with_context(tz=event.date_tz).date_begin"
+                                        t-options="{'date_only': 'true', 'format': 'long'}" itemprop="startDate"
+                                        t-att-datetime="event.date_begin"/>
+                                </div>
+                                <t t-if="not event.is_one_day">Start -</t>
+                                <span t-field="event.with_context(tz=event.date_tz).date_begin"
+                                      t-options="{'time_only': 'true', 'format': 'short'}"/>
+                                <!--                                <t t-if="event.is_one_day">-->
+                                <!--                                    <i class="fa fa-long-arrow-right mx-1"/>-->
+                                <!--                                    <span t-field="event.with_context(tz=event.date_tz).date_end"-->
+                                <!--                                          t-options="{'time_only': 'true', 'format': 'short'}"/>-->
+                                <!--                                </t>-->
+                                <!--                                <t t-else="">-->
+                                <!--                                    <i class="fa fa-long-arrow-down d-block text-muted mx-3 my-2"-->
+                                <!--                                       style="font-size: 1.5rem"/>-->
+                                <!--                                    <div class="d-flex">-->
+                                <!--                                        <h5 t-field="event.with_context(tz=event.date_tz).date_end"-->
+                                <!--                                            class="my-1 mr-1 oe_hide_on_date_edit"-->
+                                <!--                                            t-options="{'date_only': 'true', 'format': 'EEEE'}"/>-->
+                                <!--                                        <h5 class="my-1 oe_hide_on_date_edit"-->
+                                <!--                                            t-field="event.with_context(tz=event.date_tz).date_end"-->
+                                <!--                                            t-options="{'date_only': 'true', 'format': 'long'}"/>-->
+                                <!--                                    </div>-->
+                                <!--                                    <t t-if="not event.is_one_day">End -</t>-->
+                                <!--                                    <span t-field="event.with_context(tz=event.date_tz).date_end"-->
+                                <!--                                          t-options="{'time_only': 'true', 'format': 'short'}"/>-->
+                                <!--                                </t>-->
+                                <!-- Timezone -->
+                                <small t-esc="event.date_tz" class="d-block my-3 text-muted"/>
+
+                                <div class="dropdown">
+                                    <i class="fa fa-calendar mr-1"/>
+                                    <a href="#" role="button" data-toggle="dropdown">Add to Calendar</a>
+                                    <div class="dropdown-menu">
+                                        <a t-att-href="iCal_url" class="dropdown-item">iCal/Outlook</a>
+                                        <a t-att-href="google_url" class="dropdown-item" target="_blank">Google</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Location -->
+                            <div t-if="event.address_id" class="o_wevent_sidebar_block">
+                                <h6 class="o_wevent_sidebar_title">Location</h6>
+                                <h4 t-field="event.address_id" class="" t-options='{
+                                    "widget": "contact",
+                                    "fields": ["name"]
+                                }'/>
+                                <div itemprop="location" class="mb-2" t-field="event.address_id" t-options='{
+                                    "widget": "contact",
+                                    "fields": ["address"],
+                                    "no_marker": True
+                                }'/>
+                                <div class="mb-3" t-field="event.address_id" t-options='{
+                                    "widget": "contact",
+                                    "fields": ["phone", "mobile", "email"]
+                                }'/>
+                                <i class="fa fa-map-marker fa-fw" role="img"/>
+                                <a t-att-href="event._google_map_link()" target="_blank">Get the direction</a>
+                            </div>
+                            <!-- Organizer -->
+                            <div t-if="event.organizer_id" class="o_wevent_sidebar_block">
+                                <h6 class="o_wevent_sidebar_title">Organizer</h6>
+                                <h4 t-field="event.organizer_id"/>
+                                <div itemprop="location" t-field="event.organizer_id"
+                                     t-options="{'widget': 'contact', 'fields': ['phone', 'mobile', 'email']}"/>
+                            </div>
+                            <!-- Social -->
+                            <div class="o_wevent_sidebar_block">
+                                <h6 class="o_wevent_sidebar_title">SHARE</h6>
+                                <p class="mb-2">Find out what people see and say about this event, and join the
+                                    conversation.
+                                </p>
+                                <t t-snippet-call="website.s_share">
+                                    <t t-set="_no_title" t-value="True"/>
+                                    <t t-set="_classes" t-valuef="o_wevent_sidebar_social mx-n1"/>
+                                    <t t-set="_link_classes" t-valuef="o_wevent_social_link"/>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </t>
+    </template>
+</odoo>

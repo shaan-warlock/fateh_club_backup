@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Portal -->
+    <template id="portal_my_home_menu_registration"
+              name="Portal layout : Event Registration Entry"
+              inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'registration' or registration" t-attf-class="breadcrumb-item #{'active ' if not registration else ''}">
+                <a t-if="registration" t-attf-href="/my/registration?{{ keep_query() }}">Event Ticket</a>
+                <t t-else="">Event Ticket</t>
+            </li>
+            <li t-if="registration" class="breadcrumb-item active">
+                <span t-field="registration.name"/>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_registration"
+              name="Show Event Tickets"
+              inherit_id="portal.portal_my_home">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Event Tickets</t>
+                <t t-set="url" t-value="'/my/registration'"/>
+                <t t-set="placeholder_count" t-value="'registration_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_my_registration" name="My Registration">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Event Tickets</t>
+            </t>
+            <t t-if="not registrations">
+                <div class="alert alert-warning mt8" role="alert">
+                    <p class="mb-0">There is no registration linked to your account.</p>
+                </div>
+            </t>
+            <t t-else="" t-call="portal.portal_table">
+                <t t-set="registrations" t-value="grouped_registrations or registrations"/>
+                <tr t-if="not grouped_registrations">
+                    <th>Registration</th>
+                    <th class="text-right">Date</th>
+                    <th>Status</th>
+                </tr>
+                <t t-foreach="registrations" t-as="regs">
+                    <thead t-if="grouped_registrations and not groupby == 'none'">
+                        <t t-set="groupby_record" t-value="regs[0]"/>
+                        <t t-set="regs" t-value="regs[1]"/>
+                        <tr class="thead-light">
+                            <th>
+                                <em class="font-weight-normal text-muted">Group by <t t-out="searchbar_groupby[groupby]['label']"/>:</em>
+                                <span t-field="groupby_record.name"/>
+                            </th>
+                            <th class="text-right">
+                                Total: <span class="text-muted" t-out="len(regs)"/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Registration</th>
+                            <th class="text-right">Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="regs" t-as="registration">
+                            <tr>
+                                <td>
+                                    <a t-attf-href="/event/registration/view/#{registration.access_token}?partnerid=#{request.env.user.partner_id.id}">
+                                       <t t-out="registration.sudo().event_id.name"/>  (<t t-out="registration.name"/>)
+                                    </a>
+                                </td>
+                                <td class="text-right"><span t-field="registration.date_open" t-options='{"format": "yyyy/MM/d  HH:mm"}'/></td>
+                                <td><span t-field="registration.state"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="sale_order_portal_content_inherit" inherit_id="sale.sale_order_portal_template">
+        <xpath expr="//li[.//a[@id='print_invoice_report']]" position="inside">
+            <t t-if="sale_order.has_event_ticket">
+            <hr/>
+<!--            <h4>Print tickets:</h4>-->
+<!--                Removed by Agent order-->
+<!--            <div class="btn-group flex-grow-1 mr-1 mb-1">-->
+<!--                <a role="button"-->
+<!--                   t-attf-href="/my/order/ticket/print/#{sale_order.access_token}"-->
+<!--                   class="btn btn-secondary btn-block o_print_btn"-->
+<!--                   target="_blank"-->
+<!--                   aria-label="Print"-->
+<!--                   title="Print">-->
+<!--                    <i class="fa fa-print"/>-->
+<!--                    Print A4-->
+<!--                </a>-->
+<!--            </div>-->
+            <div class="btn-group flex-grow-1 mb-1">
+
+                <a role="button"
+                   t-attf-href="/my/order/ticket/printa/#{sale_order.access_token}"
+                   class="btn btn-secondary btn-block o_print_btn"
+                   target="_blank"
+                   aria-label="Print"
+                   title="Print">
+                    <i class="fa fa-print"/>
+                    Print Tickets
+                </a>
+            </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

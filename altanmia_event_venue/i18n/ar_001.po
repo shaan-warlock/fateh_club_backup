@@ -1,0 +1,2539 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* altanmia_event_venue
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-18 08:08+0000\n"
+"PO-Revision-Date: 2023-11-18 08:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: altanmia_event_venue
+#: model:sms.template,body:altanmia_event_venue.a5_ticket_sms_registration_link_template
+msgid ""
+"\n"
+"            {{ object.event_id.with_context(lang=object.partner_id.lang).static_msg1 }}\n"
+"            {{ object.event_id.with_context(lang=object.partner_id.lang).name }}\n"
+"            {{ object.event_id.with_context(lang=object.partner_id.lang).static_msg2 }}\n"
+"            https://tic.fatehclub.com/my/ticket/print/a5/{{ object.access_token }}\n"
+"        "
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:sms.template,body:altanmia_event_venue.a4_ticket_sms_registration_link_template
+msgid ""
+"\n"
+"            {{ object.event_id.with_context(lang=object.partner_id.lang).static_msg1 }}\n"
+"            {{ object.event_id.with_context(lang=object.partner_id.lang).name }}\n"
+"            {{ object.event_id.with_context(lang=object.partner_id.lang).static_msg2 }}\n"
+"            https://tic.fatehclub.com/my/ticket/print/{{ object.access_token }}\n"
+"        "
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+msgid "# of tickets"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "&amp;"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.report,print_report_name:altanmia_event_venue.action_report_a4_registration_v2
+#: model:ir.actions.report,print_report_name:altanmia_event_venue.action_report_a5_registration_v1
+msgid "'Ticket - %s' % (object.name)"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.custom_event_description_full
+msgid "(only"
+msgstr ""
+
+#. module: altanmia_event_venue
+#. openerp-web
+#: code:addons/altanmia_event_venue/static/src/js/form_handler.js:0
+#, python-format
+msgid "<a class=\"btn btn-danger ms-2 me-2 xButton\">حذف</a>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_list
+msgid "<i class=\"fa fa-ban mr-2\"/>Unpublished"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_details
+msgid "<i class=\"fa fa-check mr-2\"/>Registered"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_form
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_form
+msgid ""
+"<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow icon\" "
+"title=\"Arrow\"/>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid ""
+"<i class=\"fa fa-print\"/>\n"
+"                                                    Print A4"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid ""
+"<i class=\"fa fa-print\"/>\n"
+"                                                    Print A5"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sale_order_portal_content_inherit
+msgid ""
+"<i class=\"fa fa-print\"/>\n"
+"                    Print A4"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sale_order_portal_content_inherit
+msgid ""
+"<i class=\"fa fa-print\"/>\n"
+"                    Print A5"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "<span class=\"mt-10\">VS</span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "<span class=\"mx-2\">Price</span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "<span class=\"mx-2\">Ticket Type</span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "<span class=\"mx-2\">السعر</span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "<span class=\"mx-2\">الفئة</span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+msgid "<span style=\"font-size:12pt;\">)</span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+msgid ""
+"<span style=\"font-size:12pt;\">, (The total requested tickets of this type "
+":</span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+msgid ""
+"<span style=\"font-size=11pt;\">Press \"+\" to distribute to other attendees emails and \"-\"\n"
+"                                    to remove the added attendees\n"
+"                                </span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#. openerp-web
+#: code:addons/altanmia_event_venue/static/src/js/website_event_attendee_form.js:0
+#, python-format
+msgid "<span>     </span><a class=\"btn btn-danger ms-2 me-2 xButton\">  -  </a>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "<span>×</span>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:mail.template,body_html:altanmia_event_venue.event_subscription_link
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;\"><tr><td align=\"center\">\n"
+"<t t-set=\"date_begin\" t-value=\"format_datetime(object.event_id.date_begin, tz='UTC', dt_format=&quot;yyyyMMdd'T'HHmmss'Z'&quot;)\"/>\n"
+"<t t-set=\"date_end\" t-value=\"format_datetime(object.event_id.date_end, tz='UTC', dt_format=&quot;yyyyMMdd'T'HHmmss'Z'&quot;)\"/>\n"
+"<t t-set=\"is_online\" t-value=\"'is_published' in object.event_id and object.event_id.is_published\"/>\n"
+"<t t-set=\"event_organizer\" t-value=\"object.event_id.organizer_id\"/>\n"
+"<t t-set=\"event_address\" t-value=\"object.event_id.address_id\"/>\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: 16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"<tbody>\n"
+"    <!-- HEADER -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"middle\" style=\"max-width: 120px;\">\n"
+"                    <span style=\"font-size: 10px;\">Your registration</span><br/>\n"
+"                    <span style=\"font-size: 20px; font-weight: bold;\">\n"
+"                        <t t-out=\"object.with_context(lang=object.partner_id.lang).name or ''\">Oscar Morgan</t>\n"
+"                    </span>\n"
+"                </td><td valign=\"middle\" align=\"center\">\n"
+"                    <img width=\"80\" height=\"80\" t-attf-src=\"/web/image/event.registration/#{object.id}/qrcode\" style=\"max-width:inherit;\" alt=\"Ticket Barcode\"/><br/>\n"
+"                    <span style=\"font-size: 15px; font-weight: bold;\">\n"
+"                        <t t-out=\"object.ref or ''\">T-0002</t>\n"
+"                    </span>\n"
+"                </td><td valign=\"middle\" align=\"right\">\n"
+"                    <t t-if=\"is_online\">\n"
+"                        <a t-att-href=\"object.event_id.website_url\" style=\"padding: 8px 12px; font-size: 12px; color: #FFFFFF; text-decoration: none !important; font-weight: 400; background-color: #003bde; border: 0px solid #003bde; border-radius:3px\">\n"
+"                            View Event\n"
+"                        </a>\n"
+"                    </t>\n"
+"                    <t t-else=\"\">\n"
+"                        <img t-att-src=\"'/logo.png?company=%s' % object.company_id.id\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" t-att-alt=\"'%s' % object.company_id.name\"/>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"                <tr><td colspan=\"2\" style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:16px 0px 16px 0px;\"/>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- EVENT DESCRIPTION -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
+"                    <div>\n"
+"                        Hello <t t-out=\"object.with_context(lang=object.partner_id.lang).name or ''\">Oscar Morgan</t>,<br/>\n"
+"                        We are happy to confirm your registration to the event\n"
+"                        <t t-if=\"is_online\">\n"
+"                            <a t-att-href=\"object.event_id.website_url\" style=\"color:#003bde;text-decoration:none;\" t-out=\"object.event_id.with_context(lang=object.partner_id.lang).name or ''\">OpenWood Collection Online Reveal</a>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <strong t-out=\"object.event_id.with_context(lang=object.partner_id.lang).name or ''\">OpenWood Collection Online Reveal</strong>\n"
+"                        </t>\n"
+"                        for attendee <t t-out=\"object.with_context(lang=object.partner_id.lang).name or ''\">Oscar Morgan</t>.\n"
+"                    </div>\n"
+"                    <div>\n"
+"                        <br/>\n"
+"                        <strong>Add this event to your calendar</strong>\n"
+"                        <a t-attf-href=\"https://www.google.com/calendar/render?action=TEMPLATE&amp;text={{ object.event_id.name }}&amp;dates={{ date_begin }}/{{ date_end }}&amp;location={{ location }}\" style=\"padding:3px 5px;border:1px solid #003bde;color:#003bde;text-decoration:none;border-radius:3px;\" target=\"new\"><img src=\"/web_editor/font_to_img/61525/rgb(0 59 222)/16\" style=\"vertical-align:middle;\" height=\"16\" alt=\"\"/> Google</a>\n"
+"                        <a t-attf-href=\"/event/{{ slug(object.event_id) }}/ics\" style=\"padding:3px 5px;border:1px solid #003bde;color:#003bde;text-decoration:none;border-radius:3px;\"><img src=\"/web_editor/font_to_img/61525/rgb(0 59 222)/16\" style=\"vertical-align:middle;\" height=\"16\" alt=\"\"/> iCal/Outlook</a>\n"
+"                        <a t-attf-href=\"https://calendar.yahoo.com/?v=60&amp;view=d&amp;type=20&amp;title={{ object.event_id.name }}&amp;in_loc={{ location }}&amp;st={{ format_datetime(object.event_id.date_begin, tz='UTC', dt_format='yyyyMMdd\\'T\\'HHmmss') }}&amp;et={{ format_datetime(object.event_id.date_end, tz='UTC', dt_format='yyyyMMdd\\'T\\'HHmmss') }}\" style=\"padding:3px 5px;border:1px solid #003bde;color:#003bde;text-decoration:none;border-radius:3px;\" target=\"new\">\n"
+"                            <img src=\"/web_editor/font_to_img/61525/rgb(0 59 222)/16\" style=\"vertical-align:middle;\" height=\"16\" alt=\"\"/> Yahoo\n"
+"                        </a>\n"
+"                        <br/><br/>\n"
+"                    </div>\n"
+"                    <div style=\"text-align:center;\">\n"
+"                        <strong>Please refer to the following link to print your ticket:</strong> <br/><br/><a role=\"button\" t-attf-href=\"/my/ticket/print/#{object.access_token}\" style=\"padding: 8px 12px; font-size: 15px;font-weight: bold; color: #FFFFFF; text-decoration: none !important; font-weight: 400; background-color: #00e300; border: 0px solid #00e300; border-radius:3px\" target=\"_blank\" aria-label=\"Print\" title=\"Print\"><span align=\"center\">A4 Ticket - <t t-out=\"object.with_context(lang=object.partner_id.lang).name or ''\"/></span>\n"
+"                                                                </a>\n"
+"                                                        </div><br/><br/>\n"
+"                    <div>\n"
+"                        See you soon,<br/>\n"
+"                        <span style=\"color: #454748;\">\n"
+"                        -- <br/>\n"
+"                        <t t-if=\"event_organizer\">\n"
+"                            <t t-out=\"event_organizer.with_context(lang=object.partner_id.lang).name or ''\">YourCompany</t>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            The <t t-out=\"object.event_id.with_context(lang=object.partner_id.lang).name or ''\">OpenWood Collection Online Reveal</t> Team\n"
+"                        </t>\n"
+"                        </span>\n"
+"                    </div>\n"
+"                </td></tr>\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- DETAILS -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
+"                    <table style=\"width:100%;\">\n"
+"                        <tr>\n"
+"                            <td style=\"vertical-align:top;\">\n"
+"                                <img src=\"/web_editor/font_to_img/61555/rgb(81,81,102)/34\" style=\"padding:4px;max-width:inherit;\" height=\"34\" alt=\"\"/>\n"
+"                            </td>\n"
+"                            <td style=\"padding: 0px 10px 0px 10px;width:50%;line-height:20px;vertical-align:top;\">\n"
+"                                <div><strong>From</strong> <t t-out=\"object.event_id.date_begin_located or ''\">May 4, 2021, 7:00:00 AM</t></div>\n"
+"                                <div><strong>To</strong> <t t-out=\"object.event_id.date_end_located or ''\">May 6, 2021, 5:00:00 PM</t></div>\n"
+"                                <div style=\"font-size:12px;color:#9e9e9e\"><i><strong>TZ</strong> <t t-out=\"object.event_id.date_tz or ''\">Europe/Brussels</t></i></div>\n"
+"                            </td>\n"
+"                            <td style=\"vertical-align:top;\">\n"
+"                                <t t-if=\"event_address\">\n"
+"                                    <img src=\"/web_editor/font_to_img/61505/rgb(81,81,102)/34\" style=\"padding:4px;max-width:inherit;\" height=\"34\" alt=\"\"/>\n"
+"                                </t>\n"
+"                            </td>\n"
+"                            <td style=\"padding: 0px 10px 0px 10px;width:50%;vertical-align:top;\">\n"
+"                                <t t-if=\"event_address\">\n"
+"                                    <t t-set=\"location\" t-value=\"''\"/>\n"
+"                                    <t t-if=\"object.event_id.address_id.name\">\n"
+"                                        <div t-out=\"object.event_id.address_id.name or ''\">Teksa SpA</div>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"object.event_id.address_id.street\">\n"
+"                                        <div t-out=\"object.event_id.address_id.street or ''\">Puerto Madero 9710</div>\n"
+"                                        <t t-set=\"location\" t-value=\"object.event_id.address_id.street\"/>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"object.event_id.address_id.street2\">\n"
+"                                        <div t-out=\"object.event_id.address_id.street2 or ''\">Of A15, Santiago (RM)</div>\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.street2)\"/>\n"
+"                                    </t>\n"
+"                                    <div>\n"
+"                                    <t t-if=\"object.event_id.address_id.city\">\n"
+"                                        <t t-out=\"object.event_id.address_id.city or ''\">Pudahuel</t>,\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.city)\"/>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"object.event_id.address_id.state_id.name\">\n"
+"                                        <t t-out=\"object.event_id.address_id.state_id.name or ''\">C1</t>,\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.state_id.name)\"/>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"object.event_id.address_id.zip\">\n"
+"                                        <t t-out=\"object.event_id.address_id.zip or ''\">98450</t>\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.zip)\"/>\n"
+"                                    </t>\n"
+"                                    </div>\n"
+"                                    <t t-if=\"object.event_id.address_id.country_id.name\">\n"
+"                                        <div t-out=\"object.event_id.address_id.country_id.name or ''\">Argentina</div>\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.country_id.name)\"/>\n"
+"                                    </t>\n"
+"                                </t>\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </table>\n"
+"                </td></tr>\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                    <t t-if=\"event_organizer\">\n"
+"                        <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"\n"
+"                <tr>\n"
+"                    <td valign=\"top\" style=\"font-size: 14px;\">\n"
+"                    <!-- CONTACT ORGANIZER -->\n"
+"                        <t t-if=\"event_organizer\">\n"
+"                            <div>\n"
+"                                <span style=\"font-weight:300;margin:10px 0px\">Questions about this event?</span>\n"
+"                                <div>Please contact the organizer:</div>\n"
+"                                <ul>\n"
+"                                    <li><t t-out=\"event_organizer.with_context(lang=object.partner_id.lang).name or ''\">YourCompany</t></li>\n"
+"                                    <t t-if=\"event_organizer.email\">\n"
+"                                        <li>Mail: <a t-attf-href=\"mailto:{{ event_organizer.email }}\" style=\"text-decoration:none;color:#003bde;\" t-out=\"event_organizer.email or ''\">info@yourcompany.com</a></li>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"event_organizer.phone\">\n"
+"                                        <li>Phone: <t t-out=\"event_organizer.phone or ''\">+1 650-123-4567</t></li>\n"
+"                                    </t>\n"
+"                                </ul>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                        <img t-att-src=\"'/logo.png?company=%s' % object.company_id.id\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\"/>\n"
+"                    </td>\n"
+"                </tr>\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                    <!-- CONTACT ORGANIZER SEPARATION -->\n"
+"                    <t t-if=\"is_online or event_address\">\n"
+"                        <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                    <!-- PWA MARKGETING SEPARATION-->\n"
+"                    <t t-if=\"is_online and event_address\">\n"
+"                        <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"\n"
+"                <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
+"                    <!-- GOOGLE MAPS LINK -->\n"
+"                    <t t-if=\"event_address\">\n"
+"                        <table style=\"width:100%;\"><tr><td>\n"
+"                            <div>\n"
+"                                <a t-attf-href=\"https://maps.google.com/maps?q={{ location }}\" target=\"new\">\n"
+"                                    <img t-attf-src=\"http://maps.googleapis.com/maps/api/staticmap?autoscale=1&amp;size=598x200&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:0xa5117d%7Clabel:%7C{{ location }}\" style=\"vertical-align:bottom; width: 100%;\" alt=\"Google Maps\"/>\n"
+"                                </a>\n"
+"                            </div>\n"
+"                        </td></tr></table>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"</tbody>\n"
+"</table>\n"
+"</td></tr>\n"
+"<!-- FOOTER BY -->\n"
+"<tr><td align=\"center\" style=\"min-width: 590px;\">\n"
+"    <t t-if=\"object.company_id\">\n"
+"        <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:separate;\">\n"
+"        <tr><td style=\"text-align: center; font-size: 14px;\">\n"
+"            Sent by <a target=\"_blank\" t-attf-href=\"{{ object.company_id.website }}\" style=\"color: #003bde;\" t-out=\"object.company_id.with_context(lang=object.partner_id.lang).name or ''\">YourCompany</a>\n"
+"            <t t-if=\"is_online\">\n"
+"                <br/>\n"
+"                Discover <a href=\"/event\" style=\"color:#003bde;\">all our events</a>.\n"
+"            </t>\n"
+"        </td></tr>\n"
+"        </table>\n"
+"    </t>\n"
+"</td></tr>\n"
+"</table>\n"
+"            "
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:mail.template,body_html:altanmia_event_venue.event_subscription_link_a5
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;\"><tr><td align=\"center\">\n"
+"<t t-set=\"date_begin\" t-value=\"format_datetime(object.event_id.date_begin, tz='UTC', dt_format=&quot;yyyyMMdd'T'HHmmss'Z'&quot;)\"/>\n"
+"<t t-set=\"date_end\" t-value=\"format_datetime(object.event_id.date_end, tz='UTC', dt_format=&quot;yyyyMMdd'T'HHmmss'Z'&quot;)\"/>\n"
+"<t t-set=\"is_online\" t-value=\"'is_published' in object.event_id and object.event_id.is_published\"/>\n"
+"<t t-set=\"event_organizer\" t-value=\"object.event_id.organizer_id\"/>\n"
+"<t t-set=\"event_address\" t-value=\"object.event_id.address_id\"/>\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: 16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"<tbody>\n"
+"    <!-- HEADER -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"middle\" style=\"max-width: 120px;\">\n"
+"                    <span style=\"font-size: 10px;\">Your registration</span><br/>\n"
+"                    <span style=\"font-size: 20px; font-weight: bold;\">\n"
+"                        <t t-out=\"object.with_context(lang=object.partner_id.lang).name or ''\">Oscar Morgan</t>\n"
+"                    </span>\n"
+"                </td><td valign=\"middle\" align=\"center\">\n"
+"                    <img width=\"80\" height=\"80\" t-attf-src=\"/web/image/event.registration/#{object.id}/qrcode\" style=\"max-width:inherit;\" alt=\"Ticket Barcode\"/><br/>\n"
+"                    <span style=\"font-size: 15px; font-weight: bold;\">\n"
+"                        <t t-out=\"object.ref or ''\">T-0002</t>\n"
+"                    </span>\n"
+"                </td><td valign=\"middle\" align=\"right\">\n"
+"                    <t t-if=\"is_online\">\n"
+"                        <a t-att-href=\"object.event_id.website_url\" style=\"padding: 8px 12px; font-size: 12px; color: #FFFFFF; text-decoration: none !important; font-weight: 400; background-color: #003bde; border: 0px solid #003bde; border-radius:3px\">\n"
+"                            View Event\n"
+"                        </a>\n"
+"                    </t>\n"
+"                    <t t-else=\"\">\n"
+"                        <img t-att-src=\"'/logo.png?company=%s' % object.company_id.id\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" t-att-alt=\"'%s' % object.company_id.name\"/>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"                <tr><td colspan=\"2\" style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:16px 0px 16px 0px;\"/>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- EVENT DESCRIPTION -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
+"                    <div>\n"
+"                        Hello <t t-out=\"object.with_context(lang=object.partner_id.lang).name or ''\">Oscar Morgan</t>,<br/>\n"
+"                        We are happy to confirm your registration to the event\n"
+"                        <t t-if=\"is_online\">\n"
+"                            <a t-att-href=\"object.event_id.website_url\" style=\"color:#003bde;text-decoration:none;\" t-out=\"object.event_id.with_context(lang=object.partner_id.lang).name or ''\">OpenWood Collection Online Reveal</a>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <strong t-out=\"object.event_id.with_context(lang=object.partner_id.lang).name or ''\">OpenWood Collection Online Reveal</strong>\n"
+"                        </t>\n"
+"                        for attendee <t t-out=\"object.with_context(lang=object.partner_id.lang).name or ''\">Oscar Morgan</t>.\n"
+"                    </div>\n"
+"                    <div>\n"
+"                        <br/>\n"
+"                        <strong>Add this event to your calendar</strong>\n"
+"                        <a t-attf-href=\"https://www.google.com/calendar/render?action=TEMPLATE&amp;text={{ object.event_id.name }}&amp;dates={{ date_begin }}/{{ date_end }}&amp;location={{ location }}\" style=\"padding:3px 5px;border:1px solid #003bde;color:#003bde;text-decoration:none;border-radius:3px;\" target=\"new\"><img src=\"/web_editor/font_to_img/61525/rgb(0 59 222)/16\" style=\"vertical-align:middle;\" height=\"16\" alt=\"\"/> Google</a>\n"
+"                        <a t-attf-href=\"/event/{{ slug(object.event_id) }}/ics\" style=\"padding:3px 5px;border:1px solid #003bde;color:#003bde;text-decoration:none;border-radius:3px;\"><img src=\"/web_editor/font_to_img/61525/rgb(0 59 222)/16\" style=\"vertical-align:middle;\" height=\"16\" alt=\"\"/> iCal/Outlook</a>\n"
+"                        <a t-attf-href=\"https://calendar.yahoo.com/?v=60&amp;view=d&amp;type=20&amp;title={{ object.event_id.name }}&amp;in_loc={{ location }}&amp;st={{ format_datetime(object.event_id.date_begin, tz='UTC', dt_format='yyyyMMdd\\'T\\'HHmmss') }}&amp;et={{ format_datetime(object.event_id.date_end, tz='UTC', dt_format='yyyyMMdd\\'T\\'HHmmss') }}\" style=\"padding:3px 5px;border:1px solid #003bde;color:#003bde;text-decoration:none;border-radius:3px;\" target=\"new\">\n"
+"                            <img src=\"/web_editor/font_to_img/61525/rgb(0 59 222)/16\" style=\"vertical-align:middle;\" height=\"16\" alt=\"\"/> Yahoo\n"
+"                        </a>\n"
+"                        <br/><br/>\n"
+"                    </div>\n"
+"                    <div style=\"text-align:center;\">\n"
+"                        <strong>Please refer to the following link to print your ticket:</strong> <br/><br/><a role=\"button\" t-attf-href=\"/my/ticket/print/a5/#{object.access_token}\" style=\"padding: 8px 12px; font-size: 15px;font-weight: bold; color: #FFFFFF; text-decoration: none !important; font-weight: 400; background-color: #00e300; border: 0px solid #00e300; border-radius:3px\" target=\"_blank\" aria-label=\"Print\" title=\"Print\"><span align=\"center\">A5 Ticket - <t t-out=\"object.with_context(lang=object.partner_id.lang).name or ''\"/></span>\n"
+"                                                                </a>\n"
+"                                                        </div><br/><br/>\n"
+"                    <div>\n"
+"                        See you soon,<br/>\n"
+"                        <span style=\"color: #454748;\">\n"
+"                        -- <br/>\n"
+"                        <t t-if=\"event_organizer\">\n"
+"                            <t t-out=\"event_organizer.with_context(lang=object.partner_id.lang).name or ''\">YourCompany</t>\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            The <t t-out=\"object.event_id.with_context(lang=object.partner_id.lang).name or ''\">OpenWood Collection Online Reveal</t> Team\n"
+"                        </t>\n"
+"                        </span>\n"
+"                    </div>\n"
+"                </td></tr>\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- DETAILS -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
+"                    <table style=\"width:100%;\">\n"
+"                        <tr>\n"
+"                            <td style=\"vertical-align:top;\">\n"
+"                                <img src=\"/web_editor/font_to_img/61555/rgb(81,81,102)/34\" style=\"padding:4px;max-width:inherit;\" height=\"34\" alt=\"\"/>\n"
+"                            </td>\n"
+"                            <td style=\"padding: 0px 10px 0px 10px;width:50%;line-height:20px;vertical-align:top;\">\n"
+"                                <div><strong>From</strong> <t t-out=\"object.event_id.date_begin_located or ''\">May 4, 2021, 7:00:00 AM</t></div>\n"
+"                                <div><strong>To</strong> <t t-out=\"object.event_id.date_end_located or ''\">May 6, 2021, 5:00:00 PM</t></div>\n"
+"                                <div style=\"font-size:12px;color:#9e9e9e\"><i><strong>TZ</strong> <t t-out=\"object.event_id.date_tz or ''\">Europe/Brussels</t></i></div>\n"
+"                            </td>\n"
+"                            <td style=\"vertical-align:top;\">\n"
+"                                <t t-if=\"event_address\">\n"
+"                                    <img src=\"/web_editor/font_to_img/61505/rgb(81,81,102)/34\" style=\"padding:4px;max-width:inherit;\" height=\"34\" alt=\"\"/>\n"
+"                                </t>\n"
+"                            </td>\n"
+"                            <td style=\"padding: 0px 10px 0px 10px;width:50%;vertical-align:top;\">\n"
+"                                <t t-if=\"event_address\">\n"
+"                                    <t t-set=\"location\" t-value=\"''\"/>\n"
+"                                    <t t-if=\"object.event_id.address_id.name\">\n"
+"                                        <div t-out=\"object.event_id.address_id.name or ''\">Teksa SpA</div>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"object.event_id.address_id.street\">\n"
+"                                        <div t-out=\"object.event_id.address_id.street or ''\">Puerto Madero 9710</div>\n"
+"                                        <t t-set=\"location\" t-value=\"object.event_id.address_id.street\"/>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"object.event_id.address_id.street2\">\n"
+"                                        <div t-out=\"object.event_id.address_id.street2 or ''\">Of A15, Santiago (RM)</div>\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.street2)\"/>\n"
+"                                    </t>\n"
+"                                    <div>\n"
+"                                    <t t-if=\"object.event_id.address_id.city\">\n"
+"                                        <t t-out=\"object.event_id.address_id.city or ''\">Pudahuel</t>,\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.city)\"/>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"object.event_id.address_id.state_id.name\">\n"
+"                                        <t t-out=\"object.event_id.address_id.state_id.name or ''\">C1</t>,\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.state_id.name)\"/>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"object.event_id.address_id.zip\">\n"
+"                                        <t t-out=\"object.event_id.address_id.zip or ''\">98450</t>\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.zip)\"/>\n"
+"                                    </t>\n"
+"                                    </div>\n"
+"                                    <t t-if=\"object.event_id.address_id.country_id.name\">\n"
+"                                        <div t-out=\"object.event_id.address_id.country_id.name or ''\">Argentina</div>\n"
+"                                        <t t-set=\"location\" t-value=\"'%s, %s' % (location, object.event_id.address_id.country_id.name)\"/>\n"
+"                                    </t>\n"
+"                                </t>\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </table>\n"
+"                </td></tr>\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                    <t t-if=\"event_organizer\">\n"
+"                        <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"\n"
+"                <tr>\n"
+"                    <td valign=\"top\" style=\"font-size: 14px;\">\n"
+"                    <!-- CONTACT ORGANIZER -->\n"
+"                        <t t-if=\"event_organizer\">\n"
+"                            <div>\n"
+"                                <span style=\"font-weight:300;margin:10px 0px\">Questions about this event?</span>\n"
+"                                <div>Please contact the organizer:</div>\n"
+"                                <ul>\n"
+"                                    <li><t t-out=\"event_organizer.with_context(lang=object.partner_id.lang).name or ''\">YourCompany</t></li>\n"
+"                                    <t t-if=\"event_organizer.email\">\n"
+"                                        <li>Mail: <a t-attf-href=\"mailto:{{ event_organizer.email }}\" style=\"text-decoration:none;color:#003bde;\" t-out=\"event_organizer.email or ''\">info@yourcompany.com</a></li>\n"
+"                                    </t>\n"
+"                                    <t t-if=\"event_organizer.phone\">\n"
+"                                        <li>Phone: <t t-out=\"event_organizer.phone or ''\">+1 650-123-4567</t></li>\n"
+"                                    </t>\n"
+"                                </ul>\n"
+"                            </div>\n"
+"                        </t>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                        <img t-att-src=\"'/logo.png?company=%s' % object.company_id.id\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\"/>\n"
+"                    </td>\n"
+"                </tr>\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                    <!-- CONTACT ORGANIZER SEPARATION -->\n"
+"                    <t t-if=\"is_online or event_address\">\n"
+"                        <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"\n"
+"                <tr><td style=\"text-align:center;\">\n"
+"                    <!-- PWA MARKGETING SEPARATION-->\n"
+"                    <t t-if=\"is_online and event_address\">\n"
+"                        <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"\n"
+"                <tr><td valign=\"top\" style=\"font-size: 14px;\">\n"
+"                    <!-- GOOGLE MAPS LINK -->\n"
+"                    <t t-if=\"event_address\">\n"
+"                        <table style=\"width:100%;\"><tr><td>\n"
+"                            <div>\n"
+"                                <a t-attf-href=\"https://maps.google.com/maps?q={{ location }}\" target=\"new\">\n"
+"                                    <img t-attf-src=\"http://maps.googleapis.com/maps/api/staticmap?autoscale=1&amp;size=598x200&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:0xa5117d%7Clabel:%7C{{ location }}\" style=\"vertical-align:bottom; width: 100%;\" alt=\"Google Maps\"/>\n"
+"                                </a>\n"
+"                            </div>\n"
+"                        </td></tr></table>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"</tbody>\n"
+"</table>\n"
+"</td></tr>\n"
+"<!-- FOOTER BY -->\n"
+"<tr><td align=\"center\" style=\"min-width: 590px;\">\n"
+"    <t t-if=\"object.company_id\">\n"
+"        <table width=\"590\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"min-width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:separate;\">\n"
+"        <tr><td style=\"text-align: center; font-size: 14px;\">\n"
+"            Sent by <a target=\"_blank\" t-attf-href=\"{{ object.company_id.website }}\" style=\"color: #003bde;\" t-out=\"object.company_id.with_context(lang=object.partner_id.lang).name or ''\">YourCompany</a>\n"
+"            <t t-if=\"is_online\">\n"
+"                <br/>\n"
+"                Discover <a href=\"/event\" style=\"color:#003bde;\">all our events</a>.\n"
+"            </t>\n"
+"        </td></tr>\n"
+"        </table>\n"
+"    </t>\n"
+"</td></tr>\n"
+"</table>\n"
+"            "
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__absorptive_capacity
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__absorptive_capacity
+msgid "Absorptive Capacity"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__access_token
+msgid "Access Token"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__access_warning
+msgid "Access warning"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_needaction
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_needaction
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_needaction
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_needaction
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_needaction
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_needaction
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__active
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__active
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__active
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__active
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__active
+msgid "Active"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_exception_decoration
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_exception_decoration
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_exception_decoration
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_exception_decoration
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_exception_decoration
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_exception_decoration
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_state
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_state
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_state
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_state
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_state
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_state
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_type_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_type_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_type_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_type_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_type_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_type_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.view_event_type_sponsor_form
+msgid "Add Sponsor"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "Add to Calendar"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__location
+msgid "Address"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_mail__interval_type__after_gift_confirm
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_type_mail__interval_type__after_gift_confirm
+msgid "After gift ticket confirm"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_mail__interval_type__after_paid_confirm
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_type_mail__interval_type__after_paid_confirm
+msgid "After paid ticket confirm"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#, python-format
+msgid "All"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_venue_form
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sponsor_form
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sport_team_form
+msgid "Archived"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.view_event_venue_form
+msgid "Are you sure you want to send invitation to season ticket owners?"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_attachment_count
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_attachment_count
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_attachment_count
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_attachment_count
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_attachment_count
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_attachment_count
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_gift__state__done
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+msgid "Attended"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__date_begin_day
+msgid "Begin Day"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_info
+msgid "Buy Now"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__can_publish
+msgid "Can Publish"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "Cancel"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+msgid "Cancel Registration"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_gift__state__cancel
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_season_ticket__state__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_sale_order__cart_timer_formatted
+msgid "Cart Timer Formatted"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_sale_order__cart_charge_time
+msgid "Cart charge date"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_category__name
+msgid "Category"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__partner_id
+msgid "Client"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "Close"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__closet_gate
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_registration_section_form
+msgid "Closet Gate"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__code
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__code
+msgid "Code"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__color
+msgid "Color"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__company_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__company_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__company_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__company_id
+msgid "Company"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_form
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+msgid "Confirm"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_gift__state__open
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_season_ticket__state__open
+msgid "Confirmed"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_res_partner
+msgid "Contact"
+msgstr "جهة اتصال "
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "Continue"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__cover_properties
+msgid "Cover Properties"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_category__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__create_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_category__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__create_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_registration__access_url
+msgid "Customer Portal URL"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.portal_my_registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_form
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_form
+#, python-format
+msgid "Date"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_info
+msgid "Date &amp; Time"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_event__max_reserve_ticket
+msgid "Default max reserve ticket from website"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_res_config_settings__cart_timeout_amount
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.res_config_settings_view_form_cart_timeout
+msgid "Define selling session timeout in minutes"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__description
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__description
+msgid "Description"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_category__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__display_name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "E-Gate"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "E-Ticket"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__email
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "Email"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__date_end
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__date_end
+msgid "End Date"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__date_end_located
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__date_end_located
+msgid "End Date Located"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_event
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__event_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__event_id
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_tree
+msgid "Event"
+msgstr "الفعالية"
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_mail
+msgid "Event Automated Mailing"
+msgstr "إرسال رسائل البريد الإلكتروني للفعاليات تلقائياً "
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_gift
+msgid "Event Gift"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_gift_line
+msgid "Event Gift Line"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+msgid "Event Registration"
+msgstr "تسجيل الفعالية"
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_form
+msgid "Event Season"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_sponsor
+msgid "Event Sponsor"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_sport_team
+msgid "Event Sport Team"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_details
+msgid "Event Subtitle"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_type
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__event_type_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__event_type_id
+msgid "Event Template"
+msgstr "قالب الفعالية "
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_type_ticket
+msgid "Event Template Ticket"
+msgstr "تذكرة قالب الفعالية "
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_event_ticket
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__event_ticket_id
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.portal_my_home_menu_registration
+msgid "Event Ticket"
+msgstr "تذكرة الفعالية"
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.portal_my_home_registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.portal_my_registration
+msgid "Event Tickets"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_details
+msgid "Event Title"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:mail.template,name:altanmia_event_venue.event_subscription_link
+msgid "Event: A4 Registration link"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:sms.template,name:altanmia_event_venue.a4_ticket_sms_registration_link_template
+msgid "Event: A4 SMS Registration link"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:mail.template,name:altanmia_event_venue.event_subscription_link_a5
+msgid "Event: A5 Registration link"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:sms.template,name:altanmia_event_venue.a5_ticket_sms_registration_link_template
+msgid "Event: A5 SMS Registration link"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.custom_event_description_full
+msgid "Expired"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid ""
+"Find out what people see and say about this event, and join the\n"
+"                                    conversation."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__first_team
+msgid "First Team"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_follower_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_follower_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_follower_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_follower_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_follower_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_follower_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_partner_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_partner_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_partner_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_partner_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_partner_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_partner_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.layout
+msgid "Following content will appear on all events."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__activity_type_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__activity_type_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__activity_type_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__activity_type_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__activity_type_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__activity_type_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "Gate"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__gate_keepers
+msgid "Gate Keepers"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__gate_ids
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_venue_form
+msgid "Gates"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "Get the direction"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__gift_id
+msgid "Gift"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__gift_line_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__gift_line_id
+msgid "Gift Line"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__gift_lines_mailing_lists
+msgid "Gift Lines Mailing Lists"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__gift_lines_partner_ids
+msgid "Gift Lines Partner"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__partner_id
+msgid "Gift To Contact"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__mailing_list_id
+msgid "Gift To Mail List"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.act_window,name:altanmia_event_venue.action_ticket_gift_show
+#: model:ir.ui.menu,name:altanmia_event_venue.ticket_gift_menu
+msgid "Gifts"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue_section__vector_shape
+msgid ""
+"Give section a shape as svg vector as 'M5,5 L20,5 L20,50 L5,50 L15,40Z'"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "Google"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.portal_my_registration
+msgid "Group by"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_sale_order__has_event_ticket
+msgid "Has Event Ticket"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__has_message
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__has_message
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__has_message
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__has_message
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__has_message
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__has_message
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__date_begin_hijri
+msgid "Hijri Date"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__date_begin_hijri_day
+msgid "Hijri Day"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_category__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__id
+msgid "ID"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_exception_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_exception_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_exception_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_exception_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_exception_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_exception_icon
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__activity_exception_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__activity_exception_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__activity_exception_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__activity_exception_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__activity_exception_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__activity_exception_icon
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__message_needaction
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__message_unread
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__message_needaction
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__message_unread
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__message_needaction
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__message_unread
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__message_needaction
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__message_unread
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__message_needaction
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__message_unread
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__message_needaction
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__message_unread
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__message_needaction
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__message_has_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__message_has_sms_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__message_has_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__message_has_sms_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__message_has_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__message_has_sms_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__message_has_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__message_has_sms_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__message_has_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__message_has_sms_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__message_has_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__message_has_sms_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__message_has_error
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/website_sale_controller.py:0
+#, python-format
+msgid "Invalid Email! Please enter a valid email address."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__is_policy_accepted
+msgid "Is Event Policy Accepted"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_is_follower
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_is_follower
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_is_follower
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_is_follower
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_is_follower
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_is_follower
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_category____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate____last_update
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_category__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__write_uid
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_category__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__write_date
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#, python-format
+msgid "Lega"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "Location"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__logo
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__logo
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_type__logo
+msgid "Logo"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_type_mail
+msgid "Mail Scheduling on Event Category"
+msgstr "جدولة رسائل البريد حسب فئة الفعالية"
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_main_attachment_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_main_attachment_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_main_attachment_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_main_attachment_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_main_attachment_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_main_attachment_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__main_gate
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "Main Gate"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__layout_high
+msgid "Map high"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__layout_width
+msgid "Map width"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_venue_tree
+msgid "Material Name"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_event_ticket__max_reserve_ticket
+msgid "Max reserve ticket from website"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_has_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_has_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_has_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_has_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_has_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_has_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__mobile
+msgid "Mobile"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_res_users__mobile_app
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.view_users_form_inherit_for_ticket
+msgid "Mobile App"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__my_activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__my_activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__my_activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__my_activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__my_activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__my_activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_res_partner__name
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_res_users__name
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "Name"
+msgstr "الاسم"
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_calendar_event_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_calendar_event_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_calendar_event_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_calendar_event_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_calendar_event_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_calendar_event_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "الفعالية التالية في تقويم الأنشطة "
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_date_deadline
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_summary
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_summary
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_summary
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_summary
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_summary
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_summary
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_type_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_type_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_type_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_type_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_type_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_type_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_list
+msgid "No season ticket found."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#, python-format
+msgid "None"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__ticket_count
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__ticket_count
+msgid "Number Of ticket"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_needaction_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_needaction_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_needaction_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_needaction_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_needaction_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_needaction_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_has_error_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_has_error_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_has_error_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_has_error_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_has_error_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_has_error_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__message_needaction_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__message_needaction_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__message_needaction_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__message_needaction_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__message_needaction_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__message_needaction_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__message_has_error_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__message_has_error_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__message_has_error_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__message_has_error_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__message_has_error_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__message_has_error_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__message_unread_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__message_unread_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__message_unread_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__message_unread_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__message_unread_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__message_unread_counter
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "Operator Avatar"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_description_organizer_locale
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "Organizer"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "Parking"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__partners_mailings
+msgid "Partners Mailings"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#, python-format
+msgid "Past"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_sale_order__payment_start
+msgid "Payment Start"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__phone
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+msgid "Phone"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "Phone <small>(Optional)</small>"
+msgstr ""
+
+#. module: altanmia_event_venue
+#. openerp-web
+#: code:addons/altanmia_event_venue/static/src/js/website_event_attendee_form.js:0
+#, python-format
+msgid "Please select at least one ticket."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__price
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__price
+msgid "Price"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__price_reduce
+msgid "Price Reduce"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sale_order_portal_content_inherit
+msgid "Print"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sale_order_portal_content_inherit
+msgid "Print tickets:"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__product_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__product_id
+msgid "Product"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__is_published
+msgid "Published to Wibsite"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__qrcode
+msgid "QRCode"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__ref
+msgid "Reference"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.custom_event_description_full
+msgid "Register"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/website_event_controller.py:0
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__registration_ids
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.portal_my_registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+#, python-format
+msgid "Registration"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.report,name:altanmia_event_venue.action_report_a4_registration_v2
+msgid "Registration A4"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.report,name:altanmia_event_venue.action_report_a5_registration_v1
+msgid "Registration A5 V1"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__registration_count
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__registration_count
+msgid "Registration Count"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_form
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+msgid "Registrations"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/models/sale_order.py:0
+#: code:addons/altanmia_event_venue/models/sale_order.py:0
+#, python-format
+msgid ""
+"Request ticket for event is more than available ticket now. Please get back "
+"to the event and readjust the quantity."
+msgstr "التذاكرة الموجودة بأمر البيع لم تعد متوفرة"
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__max_reserve_ticket
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event_ticket__max_reserve_ticket
+msgid "Reserve Limit"
+msgstr ""
+
+#. module: altanmia_event_venue
+#. openerp-web
+#: code:addons/altanmia_event_venue/static/src/js/event_venue_layout.js:0
+#, python-format
+msgid "Reserved ticket not available"
+msgstr ""
+
+#. module: altanmia_event_venue
+#. openerp-web
+#: code:addons/altanmia_event_venue/static/src/js/event_venue_layout.js:0
+#, python-format
+msgid "Reserved ticket over the limit (${maxLimit})"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__activity_user_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__activity_user_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__activity_user_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__activity_user_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__activity_user_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__activity_user_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__website_id
+msgid "Restrict publishing to this website."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "Row"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__is_seo_optimized
+msgid "SEO optimized"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "SHARE"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_has_sms_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_has_sms_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_has_sms_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_has_sms_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_has_sms_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_has_sms_error
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_form
+msgid "Sale Order"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_sale_order
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__sale_order_id
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر المبيعات"
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.custom_event_description_full
+msgid "Sales end on"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.custom_event_description_full
+msgid "Sales start on"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#, python-format
+msgid "Search in All"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#, python-format
+msgid "Search in Event"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.act_window,name:altanmia_event_venue.action_season_show
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__season_id
+#: model:ir.ui.menu,name:altanmia_event_venue.season_menu
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_form
+msgid "Season"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.act_window,name:altanmia_event_venue.action_season_ticket_show
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__season_ticket_id
+#: model:ir.ui.menu,name:altanmia_event_venue.season_ticket_menu
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_form
+msgid "Season Ticket"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_details
+msgid "Season Ticket Name"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__season_ticket_sent
+msgid "Season Ticket Sent"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.ui.menu,name:altanmia_event_venue.season_list_menu
+msgid "Season list"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_sale_order__season_ticket_id
+msgid "Season ticket"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__section_id
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "Section"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__section_closset_gate
+msgid "Section Closset Gate"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_registration__section_map
+msgid "Section Map"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__vector_shape
+msgid "Section Shape"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event_ticket__section_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__section_ids
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_venue_form
+msgid "Sections"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_res_config_settings__cart_timeout
+msgid "Selling Session Timeout"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.view_event_venue_form
+msgid "Send Season Ticket"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+msgid "Send by Email"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__seo_name
+msgid "Seo name"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_res_config_settings__cart_timeout_amount
+msgid "Session Timeout"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_form
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+msgid "Set To Unconfirmed"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_sale_order__payment_start
+msgid ""
+"Set True when payment process start, so order cannot be cleared by js timer"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.custom_event_description_full
+msgid "Sign Up First"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.custom_event_description_full
+msgid "Sold Out"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/website_sale_controller.py:0
+#, python-format
+msgid "Some required fields are empty."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sponsor_form
+msgid "Sponsor"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sponsor_form
+msgid "Sponsor Form"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.act_window,name:altanmia_event_venue.action_sponsor_show
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_type__sponsor_ids
+#: model:ir.ui.menu,name:altanmia_event_venue.sponsor_menu
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.view_event_type_sponsor_form
+msgid "Sponsors"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sport_team_form
+msgid "Sport Team"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sport_team_form
+msgid "Sport Team Form"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.act_window,name:altanmia_event_venue.action_sport_team_show
+#: model:ir.ui.menu,name:altanmia_event_venue.sport_team_menu
+msgid "Sport Teams"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__name
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "Stadium Gate"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "Start -"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__date_begin
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__date_begin
+msgid "Start Date"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__date_begin_located
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__date_begin_located
+msgid "Start Date Located"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__static_msg
+msgid "Static Msg"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__static_msg_title1
+msgid "Static Msg Title1"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__static_msg_title2
+msgid "Static Msg Title2"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__static_msg1
+msgid "Static Msg1"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__static_msg2
+msgid "Static Msg2"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__state
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__state
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__state
+msgid "Status"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__activity_state
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__activity_state
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__activity_state
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__activity_state
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__activity_state
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__activity_state
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "Terms and Conditions"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__description
+msgid "The description shown in the Season Ticket in website"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#, python-format
+msgid "The field '%s' does not exist in the targeted model"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__website_url
+msgid "The full URL to access the document through the website."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/models/event_inherit.py:0
+#, python-format
+msgid "The max number of ticket is constraint by section capacity."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/models/event_inherit.py:0
+#, python-format
+msgid "The max number of ticket is constraint by venue capacity."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.actions.act_window,help:altanmia_event_venue.action_event_venue_show
+msgid "There is No Venue Yet!"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.actions.act_window,help:altanmia_event_venue.action_ticket_gift_show
+msgid "There is No gift Yet!"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.actions.act_window,help:altanmia_event_venue.action_season_show
+msgid "There is No season Yet!"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.actions.act_window,help:altanmia_event_venue.action_season_ticket_show
+msgid "There is No season ticket Yet!"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.actions.act_window,help:altanmia_event_venue.action_sponsor_show
+msgid "There is No sponsor Yet!"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.actions.act_window,help:altanmia_event_venue.action_sport_team_show
+msgid "There is No sport team Yet!"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.portal_my_registration
+msgid "There is no registration linked to your account."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__event_type_ticket_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__event_type_ticket_id
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "Ticket"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event_ticket__background
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_type_ticket__background
+msgid "Ticket Background"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event_ticket__background_a4
+msgid "Ticket Background A4"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+msgid "Ticket Group #"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__name
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_form
+msgid "Ticket Owner"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_info
+msgid "Ticket Price"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_info
+msgid "Ticket Type"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.ticket_gift_form
+msgid "Tickets"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "Tickets Buyer Information"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.cart_lines_timeout
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.cart_popover_timeout
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.cart_summary_timeout
+msgid ""
+"Timeout: Your selling session has expired, and your cart has been cleared, "
+"since the allotted time for completing the sale has been exceeded."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__date_tz
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__date_tz
+msgid "Timezone"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.portal_my_registration
+msgid "Total:"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_type_mail__interval_type
+msgid "Trigger"
+msgstr "تشغيل "
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_mail__interval_type
+msgid "Trigger "
+msgstr "تشغيل "
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__activity_exception_decoration
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__activity_exception_decoration
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__activity_exception_decoration
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__activity_exception_decoration
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__activity_exception_decoration
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__activity_exception_decoration
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_gift__state__draft
+#: model:ir.model.fields.selection,name:altanmia_event_venue.selection__event_season_ticket__state__draft
+msgid "Unconfirmed"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_unread
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_unread
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_unread
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_unread
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_unread
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_unread
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__message_unread_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__message_unread_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__message_unread_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__message_unread_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__message_unread_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__message_unread_counter
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: code:addons/altanmia_event_venue/controllers/portal.py:0
+#, python-format
+msgid "Upcoming"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_list
+msgid "Use the top button '<b>+ New</b>' to create a season ticket."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "VS"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__venue_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_gate__venue_id
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue_section__venue_id
+msgid "Venue"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__sections_background
+msgid "Venue Background"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__sections_map
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.event_venue_form
+msgid "Venue Map"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.actions.act_window,name:altanmia_event_venue.action_event_venue_show
+#: model:ir.ui.menu,name:altanmia_event_venue.event_venue_menu
+msgid "Venues"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__website_published
+msgid "Visible on current website"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__website_id
+msgid "Website"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift__website_message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_gift_line__website_message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__website_message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season_ticket__website_message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sponsor__website_message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_sport_team__website_message_ids
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__website_url
+msgid "Website URL"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift__website_message_ids
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_gift_line__website_message_ids
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season__website_message_ids
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_season_ticket__website_message_ids
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sponsor__website_message_ids
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_sport_team__website_message_ids
+#: model:ir.model.fields,help:altanmia_event_venue.field_event_venue__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__website_meta_description
+msgid "Website meta description"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__website_meta_keywords
+msgid "Website meta keywords"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__website_meta_title
+msgid "Website meta title"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__website_meta_og_img
+msgid "Website opengraph image"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_season__year
+msgid "Year"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.cart_lines_timeout
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.cart_popover_timeout
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.cart_summary_timeout
+msgid "Your cart is empty!"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:mail.template,subject:altanmia_event_venue.event_subscription_link
+#: model:mail.template,subject:altanmia_event_venue.event_subscription_link_a5
+msgid ""
+"Your registration at {{ object.event_id.name }} Ticket No {{object.ref}}"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_venue__active
+msgid "active"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.custom_event_description_full
+msgid "available)"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sport_team_form
+msgid "e.g. Al Fateh Club"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.sponsor_form
+msgid "e.g. Mega Co."
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_category
+msgid "event.category"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_season
+msgid "event.season"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_season_ticket
+msgid "event.season.ticket"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_venue
+msgid "event.venue"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_venue_gate
+msgid "event.venue.gate"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model,name:altanmia_event_venue.model_event_venue_section
+msgid "event.venue.section"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.season_ticket_buyer_details
+msgid "for"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "iCal/Outlook"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "seat"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model:ir.model.fields,field_description:altanmia_event_venue.field_event_event__second_team
+msgid "second Team"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration_attendee_details
+msgid "your help message"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "اضغط هنا Press here"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "البوابة الرئيسية"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "الشروط و الأحكام"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "الصف"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "الفئة"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "القطاع"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "المدخل"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+msgid "المقعد"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "الموقف"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+msgid "بوابة إلكترونية"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "بوابة الاستاد"
+msgstr ""
+
+#. module: altanmia_event_venue
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.registration
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a4_registration_v2_detail
+#: model_terms:ir.ui.view,arch_db:altanmia_event_venue.report_a5_registration_v1_detail
+msgid "تذكرة إلكترونية"
+msgstr ""

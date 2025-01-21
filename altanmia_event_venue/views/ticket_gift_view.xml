@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ticket_gift_tree" model="ir.ui.view">
+        <field name="name">ticket.gift.tree</field>
+        <field name="model">event.gift</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="event_id" string="Event" optional="show"/>
+                <field name="partners_mailings" invisible="1"/>
+                <field name="gift_lines_partner_ids" optional="show"/>
+                <field name="gift_lines_mailing_lists" optional="show"/>
+                <field name="ticket_count" optional="show"/>
+                <field name="state" optional="show"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ticket_gift_panel" model="ir.ui.view">
+        <field name="name">ticket.gift.panel</field>
+        <field name="model">event.gift</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="ticket_gift_form">
+            <field name="name">ticket.gift.form</field>
+            <field name="model">event.gift</field>
+            <field name="arch" type="xml">
+                <form string="Event Registration">
+                    <header>
+                        <button name="action_send_badge_email" string="Send by Email" type="object" states="open,done" class="oe_highlight"/>
+                        <button name="action_confirm" string="Confirm" states="draft" type="object" class="oe_highlight"/>
+                        <button name="action_set_done" string="Attended" states="open" type="object" class="oe_highlight"/>
+                        <button name="action_set_draft" string="Set To Unconfirmed" states="cancel,done" type="object" />
+                        <button name="action_cancel" string="Cancel Registration" states="draft,open" type="object"/>
+                        <field name="state" nolabel="1" colspan="2" widget="statusbar" statusbar_visible="draft,open,done"/>
+                    </header>
+                    <sheet string="Registration">
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" name="action_open_registrations" type="object" icon="fa-book" attrs="{'invisible': [('registration_count', '=', 0)]}">
+                                <field name="registration_count" widget="statinfo" string="Registrations"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group >
+                                <field name="event_id" string="Event"/>
+                                <field name="ticket_count" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Tickets" name="tickets_gift">
+                                <field name="gift_line_ids">
+                                   <tree editable="bottom">
+                                       <field name="event_ticket_id"
+                                            domain="[
+                                                ('event_id', '=', parent.event_id),
+                                                '|', ('seats_limited', '=', False), ('seats_available', '>', 0)
+                                            ]"
+                                            options="{'no_open': True, 'no_create': True}"/>
+                                       <field name="ticket_count" force_save="1"  attrs="{'readonly': [('mailing_list_id', '!=', False)]}"/>
+                                       <field name="partner_id"/>
+                                       <field name="mailing_list_id"/>
+                                   </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+    <record model="ir.actions.act_window" id="action_ticket_gift_show">
+        <field name="name">Gifts</field>
+        <field name="res_model">event.gift</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">There is No gift Yet!</p>
+        </field>
+    </record>
+
+    <menuitem id="ticket_gift_menu"
+              name="Gifts"
+              action="action_ticket_gift_show"
+              parent="event.event_main_menu"
+              sequence="41"/>
+
+
+    <record id="event_registration_qrcode_form" model="ir.ui.view">
+        <field name="name">event.registration.qrcode.form</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="event.view_event_registration_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='utm_link']" position="after">
+                <group>
+                    <field name="qrcode" widget="image"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="event_registration_section_form" model="ir.ui.view">
+        <field name="name">event.registration.section.form</field>
+        <field name="model">event.registration</field>
+        <field name="inherit_id" ref="event.view_event_registration_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='utm_link']" position="before">
+                <group>
+                    <field name="section_id"/>
+                    <field name="section_closset_gate" string="Closet Gate"/>
+
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="season_ticket_tree" model="ir.ui.view">
+        <field name="name">season.ticket.tree</field>
+        <field name="model">event.season.ticket</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="partner_id" optional="hide"/>
+                <field name="email" optional="show"/>
+                <field name="phone" optional="show"/>
+                <field name="mobile" optional="hide"/>
+                <field name="season_id" optional="show"/>
+                <field name="event_type_id" optional="show"/>
+                <field name="event_type_ticket_id" optional="show"/>
+                <field name="date_begin" readonly="1" widget="date"/>
+                <field name="date_end" readonly="1" widget="date"/>
+                <field name="state" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="season_ticket_panel" model="ir.ui.view">
+        <field name="name">season.ticket.panel</field>
+        <field name="model">event.season.ticket</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="season_ticket_form">
+            <field name="name">season.ticket.form</field>
+            <field name="model">event.season.ticket</field>
+            <field name="arch" type="xml">
+                <form string="Season Ticket">
+                    <header>
+                        <button name="action_confirm" string="Confirm" states="draft" type="object" class="oe_highlight"/>
+                        <button name="action_set_draft" string="Set To Unconfirmed" states="cancel" type="object" />
+                        <field name="state" nolabel="1" colspan="2" widget="statusbar" statusbar_visible="draft,open"/>
+                    </header>
+                    <sheet string="Season Ticket">
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" name="action_open_registrations" type="object" icon="fa-book" attrs="{'invisible': [('registration_count', '=', 0)]}">
+                                <field name="registration_count" widget="statinfo" string="Registrations"/>
+                            </button>
+                             <button name="action_view_sale_order" type="object" class="oe_stat_button"
+                                    icon="fa-usd" groups="sales_team.group_sale_salesman"
+                                    string="Sale Order" attrs="{'invisible': [('sale_order_id', '=', False)]}">
+                            </button>
+                        </div>
+                        <group>
+                            <group string="Ticket Owner" name="attendee">
+                                <field name="partner_id"/>
+                                <field name="sale_order_id" invisible="1"/>
+
+                                <field class="o_text_overflow" name="name"/>
+                                <field name="email"/>
+                                <field name="phone" class="o_force_ltr"/>
+                                <field name="mobile" class="o_force_ltr"/>
+                            </group>
+                            <group>
+                                <field name="active" invisible="1"/>
+                                <field name="season_id"/>
+                                <label for="date_begin" string="Date"/>
+                                <div class="o_row">
+                                    <field name="date_begin" widget="daterange" nolabel="1" class="oe_inline" options="{'related_end_date': 'date_end'}"/>
+                                    <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
+                                    <field name="date_end" widget="daterange" nolabel="1" class="oe_inline" options="{'related_start_date': 'date_begin'}"/>
+                                </div>
+                                <field name="date_tz"/>
+                                <field name="event_type_id" options="{'no_open': True, 'no_create': True}"/>
+                                <field name="event_type_ticket_id" domain="[('event_type_id','=',event_type_id)]" options="{'no_open': True, 'no_create': True}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+</odoo>
