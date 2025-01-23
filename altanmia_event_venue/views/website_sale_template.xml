@@ -4,8 +4,8 @@
               name="Header Cart Link with timer"
               inherit_id="website_sale.header_cart_link">
         <xpath expr="//sup[hasclass('my_cart_quantity')]" position="after">
-            <sup  t-if="website_sale_order and website_sale_order.cart_timer_formatted"
-                    t-attf-class="my_cart_timer badge badge-warning #{'start' if website_sale_order and website_sale_order.cart_quantity else 'stop'}"
+            <sup t-if="website_sale_order and website_sale_order.cart_timer_formatted"
+                 t-attf-class="my_cart_timer badge badge-warning #{'start' if website_sale_order and website_sale_order.cart_quantity else 'stop'}"
                  t-esc="website_sale_order.cart_timer_formatted"/>
         </xpath>
     </template>
@@ -16,12 +16,13 @@
         <xpath expr="//div[hasclass('alert-info')]" position="replace">
             <div t-if="not website_sale_order or not website_sale_order.website_order_line and cart_timeout"
                  class="alert alert-info">
-                    Timeout: Your selling session has expired, and your cart has been cleared, since the allotted time for completing the sale has been exceeded.
-                </div>
+                Timeout: Your selling session has expired, and your cart has been cleared, since the allotted time for
+                completing the sale has been exceeded.
+            </div>
 
             <div t-if="not website_sale_order or not website_sale_order.website_order_line and not cart_timeout"
                  class="alert alert-info">
-                    Your cart is empty!
+                Your cart is empty!
             </div>
         </xpath>
     </template>
@@ -32,12 +33,13 @@
         <xpath expr="//div[hasclass('alert-info')]" position="replace">
             <div t-if="not website_sale_order or not website_sale_order.website_order_line and cart_timeout"
                  class="alert alert-info">
-                    Timeout: Your selling session has expired, and your cart has been cleared, since the allotted time for completing the sale has been exceeded.
-                </div>
+                Timeout: Your selling session has expired, and your cart has been cleared, since the allotted time for
+                completing the sale has been exceeded.
+            </div>
 
             <div t-if="not website_sale_order or not website_sale_order.website_order_line and not cart_timeout"
                  class="alert alert-info">
-                    Your cart is empty!
+                Your cart is empty!
             </div>
         </xpath>
     </template>
@@ -70,7 +72,7 @@
                 <div>
                     <a role="button" class="btn btn-primary d-none d-md-inline-block"
                        href="/shop/print" target="_blank"
-                       aria-label="Print" title="Print">
+                       aria-label="Print" title="Print" style="background-color: #003ADD">
                         <i class="fa fa-print"></i>
                         Print Sale order
                     </a>
@@ -80,13 +82,141 @@
                        class="btn btn-primary d-none d-md-inline-block"
                        target="_blank"
                        aria-label="Print"
-                       title="Print">
+                       title="Print" style="background-color: #003ADD">
                         <i class="fa fa-print"/>
                         Print Tickets
                     </a>
                 </div>
             </div>
         </xpath>
+    </template>
+
+    <template id="gift_tickets" inherit_id="website_sale.payment_confirmation_status">
+        <xpath expr="//div[hasclass('card-header')]" position="after">
+            <div style="text-align: center;" class="mt-3">
+                <a href="/gift_ticket" class="btn btn-primary" style="width:30%;background-color:#003ADD;">Gift Tickets
+                </a>
+                <a href="/" class="btn btn-secondary" style="width:30%;">Back to Tickets Screen</a>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="gift_ticket_template" name="Gift Ticket Page">
+        <t t-call="website.layout">
+            <div class="container mt-4">
+                <center>
+                    <div class='mb-3' style="width:40%;">
+                        <h3 style="text-align: justify;">Send To</h3>
+                        <h3 style="text-align: justify;font-size:medium;">يرجى إدخال اسم وبريد المستلم لإرسال التذاكر
+                            إليه
+                        </h3>
+                    </div>
+                    <div class='mb-3' style="width:40%;">
+                        <form t-attf-action="/gift_ticket/values" method="post" id="gift_ticket_form"
+                              style="">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="label">
+                                <label for="fname">Name</label>
+                            </div>
+                            <input type="text" class="form-control mb8 input_form" placeholder="Enter first name"
+                                   name="fname"
+                                   id="fname" required="True" t-att-value="request.env.user.name"
+                                   style=""/>
+                            <div class="label">
+                                <label for="lname">Email</label>
+                            </div>
+                            <input type="text" class="form-control mb8 input_form" placeholder="Enter email"
+                                   name="email"
+                                   id="email" required="True" t-att-value="request.env.user.email"
+                                   style=""/>
+                            <div class="form-group field-login">
+                                <div style="">
+                                    <label class="label" style="margin-right:100%;" for="login">Phone</label>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="" id="basic-addon1"
+                                          required="required">
+                                        <select class="form-control phone_country_select input_form"
+                                                name="phone-country" required="required" style="">
+                                            <t t-foreach="request.env['res.country'].sudo().search([]) or []"
+                                               t-as="country">
+                                                <option t-att-value="country.phone_code"
+                                                        t-att-selected="country.phone_code == 966">+
+                                                    <span t-esc="country.phone_code"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </span>
+                                    <input type="number" placeholder="Phone" name="phone_number"
+                                           style=""
+                                           t-att-value="phone_number"
+                                           id="phone_number"
+                                           t-attf-class="form-control #{'form-control-sm' if form_small else ''} input_form"
+                                           autofocus="autofocus" required="required"/>
+                                </div>
+                            </div>
+
+                            <t t-foreach="grouped_products.items()" t-as="product_group">
+                                <div class="row" style="display: flex;">
+                                    <div class="col-6" style="text-align:left;">
+                                        <h5 itemprop="name" class="mb-3">Select tickets</h5>
+                                    </div>
+                                    <div class="col-6" style="text-align:end;">
+                                        <a href="#" class="mb-3 fa fa-angle-down toggle-tickets"
+                                           t-att-data-group="product_group[0]">&amp;nbsp;Hide
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ticket-group_sale" t-att-id="'group-' + str(product_group[0])">
+                                    <div class="row mb-2">
+                                        <t t-foreach="product_group[1]" t-as="line">
+                                            <div class="d-flex align-items-center mb-2 product_uom" style="">
+                                                <div class="col-4" style="margin-bottom: 5%">
+                                                    <t t-esc="line.event_ticket_id.name"/>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p>
+                                                        <span class="product-qty"
+                                                              t-att-data-product-qty="int(line.product_uom_qty)">
+                                                            <t t-esc="int(line.product_uom_qty)"/>
+                                                        </span>&amp;nbsp;left
+                                                    </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="d-flex align-items-center input_value" style="">
+                                                        <i class="fa fa-minus decrement-btn" style="cursor: pointer;"
+                                                           t-att-data-id="line.id"/>
+                                                        <input type="number"
+                                                               t-attf-name="nb_register-#{line.id}"
+                                                               value="0"
+                                                               t-att-data-id="line.id"
+                                                               t-att-data-max-qty="int(line.product_uom_qty)"
+                                                               class="ticket-num"
+                                                               style=""/>
+                                                        <i class="fa fa-plus increment-btn" style="cursor: pointer;"
+                                                           t-att-data-id="line.id"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+
+                                    </div>
+                                </div>
+                                <div style="text-align: justify;">
+                                    <h4 style="color:#41BE88; font-weight:bold;" id="ticketCount">
+                                        0 tickets selected
+                                    </h4>
+                                </div>
+                                <div style="text-align: center; margin-top: 20px;">
+                                    <a href="/shop/confirmation" class="btn  back_button">Back</a>
+                                    <button type="submit" class="btn  gift_ticket_button">Gift Tickets</button>
+                                </div>
+                            </t>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </t>
     </template>
 
     <template id="altanmia_event_venue_address" inherit_id="website_sale.address">

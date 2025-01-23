@@ -52,6 +52,7 @@
             'altanmia_event_venue/static/src/css/style.scss',
             "/altanmia_event_venue/static/src/scss/style_form.scss",
             "/altanmia_event_venue/static/src/scss/event_confirmation.scss",
+            "/altanmia_event_venue/static/src/css/gift_tickets.css",
             "/altanmia_event_venue/static/src/js/refresh_qr_code.js",
             "altanmia_event_venue/static/src/js/ticket_transfer.js"
         ],

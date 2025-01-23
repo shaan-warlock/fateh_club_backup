@@ -321,7 +321,6 @@ class Event(http.Controller):
         """
         Custom preparation of event register values, adding grouping and sorting logic.
         """
-        from collections import defaultdict
 
         tickets = request.env['event.event.ticket'].sudo().search([
             ('event_id', '=', event.id),
@@ -353,6 +352,36 @@ class Event(http.Controller):
             'no_group_tickets': no_group_tickets,
         }
 
-    # @http.route('/my/ticket/transfer', type='json', auth='user', website=True)
-    # def transfer_tickets(self, **kw):
-    #     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",kw)
+    @http.route(['/gift_ticket'], type="http", auth='public', website=True)
+    def gift_ticket(self, **kw):
+        sale_order = request.env['sale.order'].sudo().search([
+            ('website_id', '=', request.website.id),
+            ('partner_id', '=', request.env.user.partner_id.id),
+            ('state', '=', 'sale')
+        ], order='create_date desc', limit=1)
+
+        if not sale_order:
+            return request.render('altanmia_event_venue.thank_you_page_template', {
+                'grouped_products': {},
+                'sale_order': None,
+            })
+        sale_order_lines = sale_order.order_line
+        grouped_products = defaultdict(list)
+        for line in sale_order_lines:
+            if line.product_id:
+                grouped_products[line.product_id.id].append(line)
+        grouped_products = dict(grouped_products)
+
+        return request.render('altanmia_event_venue.gift_ticket_template', {
+            'grouped_products': grouped_products,
+            'sale_order': sale_order,
+        })
+
+    @http.route(['/gift_ticket/values'], type='http', auth='public', website=True, methods=['POST'])
+    def gift_tickets_values(self, **kwargs):
+        print("\n\n\n\nkwarg", kwargs)
+
+        return "Form Submitted Successfully!"
+
+
+
